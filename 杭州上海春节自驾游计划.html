@@ -1375,14 +1375,60 @@
         </div>
 
         <!-- 灵隐寺历史文化 -->
-        <div class="history-card">
-            <div class="history-card-title">
-                <i class="t-icon t-icon-book"></i>
-                灵隐寺历史文化
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(2)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">灵隐寺历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-2" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(2);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-2" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-2"></i>
+                </div>
             </div>
-            <p><strong>灵隐寺</strong>：始建于东晋咸和元年（326年），由印度僧人慧理创建，距今已有1700年历史，是中国佛教禅宗十刹之一。济公和尚就曾在此出家修行。</p>
-            <p><strong>飞来峰</strong>：相传东晋时印度僧人慧理见此山峰奇秀，惊叹："此乃中天竺国灵鹫山之小岭，不知何以飞来？"故名飞来峰。峰上有五代至宋代的470多尊摩崖石刻造像，是中国南方石窟艺术的瑰宝。</p>
-            <p><strong>济公传说</strong>：南宋时期，济公和尚在灵隐寺出家，他"酒肉穿肠过，佛祖心中留"的形象深入人心。寺内至今保存有济公殿，供奉济公像。</p>
+            <div class="history-collapsible-content" id="history-content-2">
+                <!-- 一、灵隐寺创建与发展 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        灵隐寺创建与发展
+                    </h3>
+                    <p><strong>东晋创建</strong>：灵隐寺始建于东晋咸和元年（326年），由印度僧人慧理创建。《灵隐寺志》载："山门对灵峰，天外有飞来。"慧理和尚见飞来峰奇秀，认定是"仙灵所隐"之地，遂建寺取名"灵隐"。</p>
+                    <p><strong>历代兴衰</strong>：灵隐寺在历史上曾多次毁建。唐代会昌年间因灭佛运动被毁，五代吴越国时重建，宋代达到鼎盛，有"东南第一山"之称。明清时期又多次重建，现存建筑多为清代所建。</p>
+                    <p><strong>现代复兴</strong>：1949年后，灵隐寺得到政府保护和修复，1987年赵朴初会长主持重修，逐渐恢复昔日规模。如今灵隐寺是中国佛教禅宗十刹之一，年接待游客超千万人次。</p>
+                </div>
+
+                <!-- 二、飞来峰与摩崖石刻 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-1"></i>
+                        飞来峰与摩崖石刻
+                    </h3>
+                    <p><strong>飞来峰传说</strong>：相传东晋时印度僧人慧理见此山峰奇秀，惊叹："此乃中天竺国灵鹫山之小岭，不知何以飞来？"故名飞来峰。峰高168米，古树参天，岩石突兀，是西湖群山中最古老的山峰。</p>
+                    <p><strong>摩崖石刻瑰宝</strong>：飞来峰上有五代至宋代的470多尊摩崖石刻造像，是中国南方石窟艺术的瑰宝。其中最著名的是弥勒佛造像（大肚弥勒），为元代作品，高9.9米，笑容可掬，是飞来峰石刻的代表作。</p>
+                    <p><strong>文物保护</strong>：1982年，飞来峰石刻被列为第二批全国重点文物保护单位。这些石刻造像题材丰富，包括佛像、菩萨像、罗汉像等，反映了中国古代石刻艺术的高超水平。</p>
+                </div>
+
+                <!-- 三、济公传说与文化影响 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-user"></i>
+                        济公传说与文化影响
+                    </h3>
+                    <p><strong>济公生平</strong>：济公（1130-1209），法名道济，俗名李修缘，南宋时期浙江天台人。他在灵隐寺出家，后到净慈寺修行，是中国历史上著名的"活佛"。</p>
+                    <p><strong>民间传说</strong>：济公和尚"酒肉穿肠过，佛祖心中留"的形象深入人心，民间流传着许多他扶危济困、惩恶扬善的故事。寺内至今保存有济公殿，供奉济公像。</p>
+                    <p><strong>文化影响</strong>：济公传说被改编为小说、戏曲、电视剧等多种艺术形式，如清代小说《济公传》、电视剧《济公》等，成为中国传统文化的重要组成部分。济公的"济世救民"精神影响深远。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《灵隐寺志》《西湖游览志》《济公传》等</p>
+                </div>
+            </div>
         </div>
 
         <div class="td-divider"></div>
@@ -1533,14 +1579,60 @@
         </div>
 
         <!-- 豫园历史文化 -->
-        <div class="history-card">
-            <div class="history-card-title">
-                <i class="t-icon t-icon-book"></i>
-                豫园历史文化
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(3)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">豫园历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-3" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(3);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-3" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-3"></i>
+                </div>
             </div>
-            <p><strong>豫园</strong>：始建于明嘉靖三十八年（1559年），由明代官员潘允端为孝敬父母而建，取"豫悦老亲"之意。是江南古典园林的代表，与苏州拙政园、留园、狮子林并称江南四大名园。</p>
-            <p><strong>豫园灯会</strong>：始于1995年，每年春节举办，已成为上海标志性民俗活动。灯会融合传统彩灯工艺与现代科技，年均游客超500万人次，是全国最大规模的新春灯会之一。</p>
-            <p><strong>老城隍庙</strong>：上海三大庙宇之一，供奉的是明代名臣秦裕伯（后改为霍光）。老上海人有"不到城隍庙，等于没到过上海"的说法。</p>
+            <div class="history-collapsible-content" id="history-content-3">
+                <!-- 一、豫园创建与历史演变 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        豫园创建与历史演变
+                    </h3>
+                    <p><strong>明代始建</strong>：豫园始建于明嘉靖三十八年（1559年），由明代官员潘允端为孝敬父母而建，取"豫悦老亲"之意。潘允端是明嘉靖年间进士，曾任刑部主事、四川布政司参议等职。</p>
+                    <p><strong>清代盛衰</strong>：豫园在清代曾多次易主，乾隆二十五年（1760年），当地士绅集资购得豫园，将其改为城隍庙的西园，成为上海士绅的活动场所。鸦片战争后，豫园曾遭破坏，部分建筑被毁。</p>
+                    <p><strong>现代修复</strong>：1956年，豫园开始大规模修复，1961年被列为上海市文物保护单位，1982年被列为全国重点文物保护单位。如今的豫园占地约2万平方米，是江南古典园林的杰出代表。</p>
+                </div>
+
+                <!-- 二、豫园园林艺术特色 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-1"></i>
+                        豫园园林艺术特色
+                    </h3>
+                    <p><strong>江南园林代表</strong>：豫园与苏州拙政园、留园、狮子林并称江南四大名园，以小巧玲珑、精雕细刻著称。园内有48处景点，包括大假山、玉玲珑、万花楼、点春堂等。</p>
+                    <p><strong>玉玲珑</strong>：豫园镇园之宝，是一块高3.3米、宽1.5米、厚0.8米的太湖石，与苏州留园的冠云峰、杭州西湖的绉云峰并称"江南三大名石"。玉玲珑具有"漏、透、瘦、皱"的特点，据说在石下烧一炉香，烟雾会从石孔中袅袅升起。</p>
+                    <p><strong>点春堂</strong>：豫园主要建筑之一，始建于清道光初年，是清代小刀会起义的指挥所。堂内陈列着小刀会起义的历史文物，是上海重要的革命纪念地。</p>
+                </div>
+
+                <!-- 三、豫园灯会与民俗文化 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-gift"></i>
+                        豫园灯会与民俗文化
+                    </h3>
+                    <p><strong>豫园灯会</strong>：始于1995年，每年春节举办，已成为上海标志性民俗活动。灯会融合传统彩灯工艺与现代科技，以生肖为主题，每年吸引游客超500万人次，是全国最大规模的新春灯会之一。</p>
+                    <p><strong>老城隍庙</strong>：上海三大庙宇之一，供奉的是明代名臣秦裕伯（后改为霍光）。老上海人有"不到城隍庙，等于没到过上海"的说法。城隍庙地区集宗教、文化、商业于一体，是上海传统文化的重要窗口。</p>
+                    <p><strong>豫园商城</strong>：依托豫园和城隍庙发展起来的商业街区，出售各种上海特色商品，如南翔小笼包、梨膏糖、五香豆等，是游客购买上海特产的好去处。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《上海地方志》《豫园志》《城隍庙志》等</p>
+                </div>
+            </div>
         </div>
 
         <div class="td-divider"></div>
@@ -1696,14 +1788,61 @@
         </div>
 
         <!-- 外滩历史文化 -->
-        <div class="history-card">
-            <div class="history-card-title">
-                <i class="t-icon t-icon-book"></i>
-                外滩历史文化
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(4)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">外滩历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-4" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(4);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-4" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-4"></i>
+                </div>
             </div>
-            <p><strong>外滩万国建筑群</strong>：外滩全长1.5公里，拥有52幢不同风格的建筑，被誉为"万国建筑博览群"。这些建筑建于1920-1930年代，涵盖哥特式、罗马式、巴洛克式、中西合璧式等多种风格，是近代上海乃至中国金融、贸易中心的象征。</p>
-            <p><strong>和平饭店</strong>：建于1929年，原名华懋饭店，由犹太富商沙逊所建，装饰艺术派风格。曾接待过卓别林、马歇尔、尼克松等名人。1楼爵士酒吧的老年爵士乐队享誉世界。</p>
-            <p><strong>外白渡桥</strong>：中国第一座全钢结构桥梁（1907年），是老上海的标志。电影《情深深雨蒙蒙》中的依萍跳桥场景就在此拍摄。</p>
+            <div class="history-collapsible-content" id="history-content-4">
+                <!-- 一、外滩的形成与发展 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        外滩的形成与发展
+                    </h3>
+                    <p><strong>历史沿革</strong>：外滩原名黄浦滩，因位于黄浦江滩地而得名。1843年上海开埠后，外滩成为西方列强在上海的租界区，逐渐发展成为中国乃至远东的金融中心。</p>
+                    <p><strong>万国建筑群</strong>：外滩全长1.5公里，拥有52幢不同风格的建筑，被誉为"万国建筑博览群"。这些建筑建于1920-1930年代，涵盖哥特式、罗马式、巴洛克式、装饰艺术派、中西合璧式等多种风格。</p>
+                    <p><strong>金融中心</strong>：外滩曾是中国金融业的中心，聚集了汇丰银行、中国银行、花旗银行等众多金融机构，有"东方华尔街"之称。如今，外滩仍是上海的金融中心之一。</p>
+                </div>
+
+                <!-- 二、外滩标志性建筑 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-2"></i>
+                        外滩标志性建筑
+                    </h3>
+                    <p><strong>和平饭店</strong>：建于1929年，原名华懋饭店，由犹太富商沙逊所建，装饰艺术派风格。曾接待过卓别林、马歇尔、尼克松等名人。1楼爵士酒吧的老年爵士乐队享誉世界，成立于1980年，是中国最古老的爵士乐队之一。</p>
+                    <p><strong>汇丰银行大楼</strong>：建于1923年，新古典主义风格，曾是远东最大的银行建筑。大楼顶部有两座铜狮，是汇丰银行的标志，现收藏于上海银行博物馆。</p>
+                    <p><strong>海关大楼</strong>：建于1927年，哥特式风格，楼顶的钟楼是外滩的标志性景观。钟楼内的大钟是英国制造的，与伦敦大本钟出自同一厂家，每小时敲响一次，声音可传数公里。</p>
+                    <p><strong>外白渡桥</strong>：中国第一座全钢结构桥梁，建于1907年，是老上海的标志。桥名"外白渡"意为"外国人不收费过桥"。电影《情深深雨蒙蒙》中的依萍跳桥场景就在此拍摄。</p>
+                </div>
+
+                <!-- 三、外滩的文化意义 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-book"></i>
+                        外滩的文化意义
+                    </h3>
+                    <p><strong>近代中国的缩影</strong>：外滩见证了上海开埠以来的历史变迁，是近代中国半殖民地半封建社会的缩影，也是中国走向现代化的见证。</p>
+                    <p><strong>上海的名片</strong>：外滩是上海最著名的旅游景点之一，每年吸引数百万游客前来参观。外滩的夜景尤为著名，与浦东陆家嘴的摩天大楼相映成趣，被誉为"世界十大夜景之一"。</p>
+                    <p><strong>文化遗产</strong>：2017年，外滩历史文化风貌区被列为中国历史文化街区。外滩的建筑、街道、景观等都是上海重要的文化遗产，承载着丰富的历史记忆。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《上海租界志》《外滩建筑志》《上海近代建筑史》等</p>
+                </div>
+            </div>
         </div>
 
         <div class="td-divider"></div>
@@ -1971,14 +2110,61 @@
         </div>
 
         <!-- 陆家嘴历史文化 -->
-        <div class="history-card">
-            <div class="history-card-title">
-                <i class="t-icon t-icon-book"></i>
-                陆家嘴历史文化
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(5)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">陆家嘴历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-5" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(5);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-5" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-5"></i>
+                </div>
             </div>
-            <p><strong>东方明珠</strong>：1994年建成，高468米，曾是亚洲第一、世界第三高塔。设计灵感来自唐诗"大珠小珠落玉盘"，由11个大小不一的球体组成，是上海的标志性建筑。</p>
-            <p><strong>陆家嘴名字由来</strong>：明代永乐年间，江苏苏州陆氏家族在此开垦土地，形成一块凸入黄浦江的滩地，故名"陆家嘴"。如今已是中国最重要的金融中心之一，与纽约曼哈顿、香港中环、伦敦金融城齐名。</p>
-            <p><strong>上海中心大厦</strong>：2016年建成，高632米，是中国第一、世界第二高楼（仅次于迪拜哈利法塔）。建筑采用旋转式设计，每层旋转1度，具有"东方之冠"的美誉。</p>
+            <div class="history-collapsible-content" id="history-content-5">
+                <!-- 一、陆家嘴名称由来与历史变迁 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        陆家嘴名称由来与历史变迁
+                    </h3>
+                    <p><strong>名称由来</strong>：明代永乐年间，江苏苏州陆氏家族在此开垦土地，形成一块凸入黄浦江的滩地，故名"陆家嘴"。陆氏家族是明代上海的名门望族，其中最著名的是陆深，明代文学家、书法家。</p>
+                    <p><strong>近代变迁</strong>：近代以来，陆家嘴一直是上海的重要码头和工业区。1949年后，陆家嘴成为上海的工业基地，聚集了许多工厂和仓库。</p>
+                    <p><strong>现代崛起</strong>：1990年，中国政府宣布开发开放浦东，陆家嘴被规划为金融贸易区。经过30多年的发展，陆家嘴已成为中国最重要的金融中心之一，与纽约曼哈顿、香港中环、伦敦金融城齐名。</p>
+                </div>
+
+                <!-- 二、陆家嘴标志性建筑 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-tower-clock"></i>
+                        陆家嘴标志性建筑
+                    </h3>
+                    <p><strong>东方明珠</strong>：1994年建成，高468米，曾是亚洲第一、世界第三高塔。设计灵感来自唐诗"大珠小珠落玉盘"，由11个大小不一的球体组成，是上海的标志性建筑。塔内设有观光层、旋转餐厅、上海城市历史发展陈列馆等。</p>
+                    <p><strong>上海中心大厦</strong>：2016年建成，高632米，是中国第一、世界第二高楼（仅次于迪拜哈利法塔）。建筑采用旋转式设计，每层旋转1度，具有"东方之冠"的美誉。大厦内设有办公区、酒店、观光层等，观光层位于118层，高度546米。</p>
+                    <p><strong>金茂大厦</strong>：1999年建成，高420.5米，曾是中国第一高楼。建筑设计灵感来自中国传统的塔形建筑，共有88层，是集办公、酒店、观光为一体的综合性建筑。88层观光厅是上海著名的观光景点之一。</p>
+                    <p><strong>环球金融中心</strong>：2008年建成，高492米，是世界最高的平顶式建筑。建筑外形像一把"军刀"，顶部有一个方形孔洞，是观光厅的入口。观光厅位于94-100层，其中100层观光天阁是世界最高的观光设施之一。</p>
+                </div>
+
+                <!-- 三、陆家嘴的金融地位与文化意义 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-money-circle"></i>
+                        陆家嘴的金融地位与文化意义
+                    </h3>
+                    <p><strong>金融中心</strong>：陆家嘴是中国最重要的金融中心，聚集了中国人民银行上海总部、上海证券交易所、上海期货交易所等金融机构，以及汇丰银行、花旗银行等众多外资银行的中国总部。</p>
+                    <p><strong>经济贡献</strong>：陆家嘴金融贸易区的经济总量占上海市的10%以上，是上海经济的重要增长点。2023年，陆家嘴金融贸易区的GDP超过5000亿元。</p>
+                    <p><strong>文化意义</strong>：陆家嘴的摩天大楼群是上海现代化的象征，代表了中国改革开放的成就。陆家嘴的夜景与外滩的万国建筑群交相辉映，成为上海最著名的景观之一，每年吸引数百万游客前来参观。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《浦东开发开放志》《陆家嘴金融贸易区志》《上海城市建设史》等</p>
+                </div>
+            </div>
         </div>
 
         <div class="td-divider"></div>
