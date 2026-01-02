@@ -474,6 +474,11 @@
         .calendar-item:hover::before {
             transform: scaleX(1);
         }
+
+        .calendar-clickable:active {
+            transform: translateY(-1px);
+            box-shadow: var(--td-shadow-3);
+        }
         
         .calendar-date {
             font-size: 18px;
@@ -1126,48 +1131,52 @@
                 <span class="td-card-title">行程日历总览</span>
             </div>
             <div class="calendar-grid">
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-1" data-date="2026-02-19">
                     <div class="calendar-date">2月19日</div>
-                    <div class="calendar-lunar">周三 · 农历正月初三</div>
+                    <div class="calendar-lunar">周四 · 农历正月初三</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-car"></i></div>
                     <div class="calendar-location">抵达杭州</div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-2" data-date="2026-02-20">
                     <div class="calendar-date">2月20日</div>
-                    <div class="calendar-lunar">周四 · 农历正月初四</div>
+                    <div class="calendar-lunar">周五 · 农历正月初四 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
                     <div class="calendar-icon"><i class="t-icon t-icon-building-1"></i></div>
                     <div class="calendar-location">杭州 · 西湖</div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-3" data-date="2026-02-21">
                     <div class="calendar-date">2月21日</div>
-                    <div class="calendar-lunar">周五 · 农历正月初五</div>
+                    <div class="calendar-lunar">周六 · 农历正月初五 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
                     <div class="calendar-icon"><i class="t-icon t-icon-temple-heaven"></i></div>
                     <div class="calendar-location">杭州 · 灵隐寺·西溪</div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-4" data-date="2026-02-22">
                     <div class="calendar-date">2月22日</div>
-                    <div class="calendar-lunar">周六 · 农历正月初六</div>
+                    <div class="calendar-lunar">周日 · 农历正月初六</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-gift"></i></div>
                     <div class="calendar-location">上海 · 豫园灯会</div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-5" data-date="2026-02-23">
                     <div class="calendar-date">2月23日</div>
-                    <div class="calendar-lunar">周日 · 农历正月初七</div>
+                    <div class="calendar-lunar">周一 · 农历正月初七 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
                     <div class="calendar-icon"><i class="t-icon t-icon-building-2"></i></div>
                     <div class="calendar-location">上海 · 外滩·南京路</div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-6" data-date="2026-02-24">
                     <div class="calendar-date">2月24日</div>
-                    <div class="calendar-lunar">周一 · 农历正月初八</div>
+                    <div class="calendar-lunar">周二 · 农历正月初八 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
                     <div class="calendar-icon"><i class="t-icon t-icon-castle"></i></div>
                     <div class="calendar-location">上海 · 迪士尼</div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item calendar-clickable" data-day="day-7" data-date="2026-02-25">
                     <div class="calendar-date">2月25日</div>
-                    <div class="calendar-lunar">周二 · 农历正月初九</div>
+                    <div class="calendar-lunar">周三 · 农历正月初九</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-tower-clock"></i></div>
                     <div class="calendar-location">上海 · 东方明珠</div>
                 </div>
+            </div>
+            <div class="td-message td-message-info" style="margin-top: var(--td-spacer-4);">
+                <i class="t-icon t-icon-info-circle"></i>
+                <strong>重要提示</strong>：2月20日、21日、23日、24日因事请假，实际行程为3天（2月19日抵达，2月22日和25日游玩）
             </div>
         </div>
 
@@ -2952,6 +2961,31 @@
                     const targetSection = daySections[dayId];
                     
                     // 平滑滚动到目标区域（≤300ms响应）
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // 行程日历总览点击事件
+            const calendarItems = document.querySelectorAll('.calendar-clickable');
+            calendarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 获取对应的Day ID
+                    const dayId = this.dataset.day;
+                    const targetSection = daySections[dayId];
+                    
+                    // 同步更新左侧快速导航条的选中状态
+                    const correspondingDateItem = document.querySelector(`.date-item[data-day="${dayId}"]`);
+                    if (correspondingDateItem) {
+                        document.querySelectorAll('.date-item').forEach(li => li.classList.remove('selected'));
+                        correspondingDateItem.classList.add('selected');
+                    }
+                    
+                    // 平滑滚动到目标区域
                     if (targetSection) {
                         targetSection.scrollIntoView({ 
                             behavior: 'smooth',
