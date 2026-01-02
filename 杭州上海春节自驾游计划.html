@@ -93,6 +93,291 @@
             max-width: 1280px;
             margin: 0 auto;
             padding: var(--td-spacer-6);
+            display: flex;
+            gap: var(--td-spacer-6);
+        }
+        
+        /* 左侧快速导航条 */
+        .quick-nav {
+            width: 280px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: var(--td-radius-large);
+            box-shadow: var(--td-shadow-3);
+            padding: var(--td-spacer-6);
+            position: sticky;
+            top: var(--td-spacer-6);
+            height: calc(100vh - 48px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        /* 滚动条样式 */
+        .quick-nav::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-track {
+            background: #f1f3f5;
+            border-radius: 3px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-thumb {
+            background: var(--td-brand-color-light-5);
+            border-radius: 3px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-thumb:hover {
+            background: var(--td-brand-color-light-3);
+        }
+        
+        /* 主内容区 */
+        .main-content {
+            flex: 1;
+        }
+        
+        /* 导航条样式 */
+        .nav-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--td-text-color-primary);
+            margin-bottom: var(--td-spacer-6);
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-3);
+            padding-bottom: var(--td-spacer-4);
+            border-bottom: 2px solid var(--td-brand-color-light-7);
+        }
+        
+        .nav-title i {
+            color: var(--td-brand-color);
+            font-size: 22px;
+        }
+        
+        /* 日期网格样式 */
+        .date-grid {
+            display: grid;
+            gap: var(--td-spacer-3);
+        }
+        
+        /* Day标签样式 */
+        .day-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+            margin-right: var(--td-spacer-2);
+            display: inline;
+        }
+        
+        /* 日期项样式 */
+        .date-item {
+            padding: var(--td-spacer-3);
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            border: 1px solid var(--td-gray-color-3);
+            border-radius: var(--td-radius-large);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            box-shadow: var(--td-shadow-1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .date-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--td-brand-color-light-5);
+            transition: all 0.3s ease;
+        }
+        
+        .date-item:hover {
+            background: linear-gradient(135deg, var(--td-brand-color-light-8) 0%, #ffffff 100%);
+            border-color: var(--td-brand-color-light-4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--td-shadow-3);
+        }
+        
+        .date-item:hover::before {
+            background: var(--td-brand-color);
+            width: 8px;
+        }
+        
+        /* 当前日期样式 */
+        .date-item.today {
+            background: linear-gradient(135deg, var(--td-brand-color) 0%, var(--td-brand-color-light-2) 100%);
+            color: white;
+            border-color: var(--td-brand-color);
+            box-shadow: var(--td-shadow-4);
+        }
+        
+        .date-item.today::before {
+            background: #ffffff;
+            width: 8px;
+        }
+        
+        /* 选中日期样式 */
+        .date-item.selected {
+            background: #f0f9ff;
+            border: 2px solid var(--td-success-color);
+            color: #000000 !important;
+            box-shadow: var(--td-shadow-3);
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .date-item.selected::before {
+            background: var(--td-success-color);
+            width: 8px;
+        }
+        
+        /* 日期项内部布局调整，确保两行显示 */
+        .date-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--td-spacer-1);
+            align-items: flex-start;
+        }
+        
+        /* 第一行：Day x + 日期数字 */
+        .date-item .first-row {
+            display: flex;
+            align-items: baseline;
+            gap: var(--td-spacer-2);
+            width: 100%;
+        }
+        
+        /* 第二行：农历日期 + 地点 */
+        .date-item .second-row {
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+            width: 100%;
+        }
+        
+        /* 确保所有状态下文字颜色正确 */
+        .date-item.selected .day-label,
+        .date-item.selected .date-number,
+        .date-item.selected .lunar-date,
+        .date-item.selected .date-location {
+            color: #000000 !important;
+        }
+        
+        /* Day标签样式 */
+        .day-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+        }
+        
+        /* 日期数字样式 */
+        .date-number {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        /* 农历日期样式 */
+        .lunar-date {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        /* 地点样式 */
+        .date-location {
+            font-size: 12px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        
+
+        
+        /* 当天日期的子元素样式 */
+        .date-item.today .day-label,
+        .date-item.today .date-number,
+        .date-item.today .lunar-date,
+        .date-item.today .date-location {
+            color: white;
+        }
+        
+        /* 选中状态的Day标签颜色 */
+        .date-item.selected .day-label {
+            color: #000000 !important;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .quick-nav {
+                width: 260px;
+                height: calc(100vh - 48px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .quick-nav {
+                width: 100%;
+                position: static;
+                height: 300px;
+                margin-bottom: var(--td-spacer-6);
+            }
+            
+            .date-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--td-spacer-3);
+            }
+            
+            .date-item {
+                padding: var(--td-spacer-4);
+            }
+            
+            .date-number {
+                font-size: 20px;
+            }
+            
+            .lunar-date {
+                font-size: 12px;
+            }
+            
+            .date-location {
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quick-nav {
+                padding: var(--td-spacer-5);
+                height: 250px;
+            }
+            
+            .nav-title {
+                font-size: 18px;
+                margin-bottom: var(--td-spacer-5);
+            }
+            
+            .date-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .date-item {
+                padding: var(--td-spacer-3);
+            }
+            
+            .date-number {
+                font-size: 18px;
+            }
+            
+            .lunar-date {
+                font-size: 11px;
+                margin-bottom: var(--td-spacer-2);
+            }
+            
+            .date-location {
+                font-size: 12px;
+            }
         }
         
         /* 标题系统 */
@@ -741,14 +1026,98 @@
 </head>
 <body>
     <div class="page-container">
-        <!-- 页面标题 -->
-        <div class="page-header">
-            <div class="page-title">
-                <i class="t-icon t-icon-location"></i>
-                杭州-上海春节自驾游深度规划方案
+        <!-- 左侧快速导航条 -->
+        <div class="quick-nav">
+            <h3 class="nav-title">
+                <i class="t-icon t-icon-calendar"></i>
+                行程快速导航
+            </h3>
+            <!-- 日期网格 -->
+            <div class="date-grid">
+                <!-- 日期项 -->
+                <div class="date-item" data-day="day-1" data-date="2026-02-19">
+                    <div class="first-row">
+                        <div class="day-label">Day 1</div>
+                        <div class="date-number">19</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初三</div>
+                        <div class="date-location">抵达杭州</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-2" data-date="2026-02-20">
+                    <div class="first-row">
+                        <div class="day-label">Day 2</div>
+                        <div class="date-number">20</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初四</div>
+                        <div class="date-location">杭州 · 西湖</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-3" data-date="2026-02-21">
+                    <div class="first-row">
+                        <div class="day-label">Day 3</div>
+                        <div class="date-number">21</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初五</div>
+                        <div class="date-location">杭州 · 灵隐寺·西溪</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-4" data-date="2026-02-22">
+                    <div class="first-row">
+                        <div class="day-label">Day 4</div>
+                        <div class="date-number">22</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初六</div>
+                        <div class="date-location">上海 · 豫园灯会</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-5" data-date="2026-02-23">
+                    <div class="first-row">
+                        <div class="day-label">Day 5</div>
+                        <div class="date-number">23</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初七</div>
+                        <div class="date-location">上海 · 外滩·南京路</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-6" data-date="2026-02-24">
+                    <div class="first-row">
+                        <div class="day-label">Day 6</div>
+                        <div class="date-number">24</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初八</div>
+                        <div class="date-location">上海 · 迪士尼</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-7" data-date="2026-02-25">
+                    <div class="first-row">
+                        <div class="day-label">Day 7</div>
+                        <div class="date-number">25</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初九</div>
+                        <div class="date-location">上海 · 东方明珠</div>
+                    </div>
+                </div>
             </div>
-            <div class="page-subtitle">探索江浙沪春节文化的完美旅程，融合历史文化与现代都市体验</div>
         </div>
+        
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 页面标题 -->
+            <div class="page-header">
+                <div class="page-title">
+                    <i class="t-icon t-icon-location"></i>
+                    杭州-上海春节自驾游深度规划方案
+                </div>
+                <div class="page-subtitle">探索江浙沪春节文化的完美旅程，融合历史文化与现代都市体验</div>
+            </div>
 
         <!-- 行程日历总览 -->
         <div class="td-card">
@@ -767,37 +1136,37 @@
                     <div class="calendar-date">2月20日</div>
                     <div class="calendar-lunar">周四 · 农历正月初四</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-building-1"></i></div>
-                    <div class="calendar-location">西湖</div>
+                    <div class="calendar-location">杭州 · 西湖</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-date">2月21日</div>
                     <div class="calendar-lunar">周五 · 农历正月初五</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-temple-heaven"></i></div>
-                    <div class="calendar-location">灵隐寺·西溪</div>
+                    <div class="calendar-location">杭州 · 灵隐寺·西溪</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-date">2月22日</div>
                     <div class="calendar-lunar">周六 · 农历正月初六</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-gift"></i></div>
-                    <div class="calendar-location">豫园灯会</div>
+                    <div class="calendar-location">上海 · 豫园灯会</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-date">2月23日</div>
                     <div class="calendar-lunar">周日 · 农历正月初七</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-building-2"></i></div>
-                    <div class="calendar-location">外滩·南京路</div>
+                    <div class="calendar-location">上海 · 外滩·南京路</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-date">2月24日</div>
                     <div class="calendar-lunar">周一 · 农历正月初八</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-castle"></i></div>
-                    <div class="calendar-location">迪士尼</div>
+                    <div class="calendar-location">上海 · 迪士尼</div>
                 </div>
                 <div class="calendar-item">
                     <div class="calendar-date">2月25日</div>
                     <div class="calendar-lunar">周二 · 农历正月初九</div>
                     <div class="calendar-icon"><i class="t-icon t-icon-tower-clock"></i></div>
-                    <div class="calendar-location">东方明珠</div>
+                    <div class="calendar-location">上海 · 东方明珠</div>
                 </div>
             </div>
         </div>
@@ -864,7 +1233,7 @@
         </div>
 
         <!-- Day 1 -->
-        <div class="td-card">
+        <div class="td-card" id="day-1">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
                 <span class="td-card-title">Day 1：2月19日（周三）晚抵达杭州 · 农历正月初三</span>
@@ -900,7 +1269,7 @@
         </div>
 
         <!-- Day 2 -->
-        <div class="td-card">
+        <div class="td-card" id="day-2">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
                 <span class="td-card-title">Day 2：2月20日（周四）西湖深度游+祈福 · 农历正月初四</span>
@@ -1233,7 +1602,7 @@
         </div>
 
         <!-- Day 3 -->
-        <div class="td-card">
+        <div class="td-card" id="day-3">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
                 <span class="td-card-title">Day 3：2月21日（周五）灵隐寺祈福+西溪湿地 · 农历正月初五（迎财神日）</span>
@@ -1434,14 +1803,14 @@
         <div class="td-divider"></div>
 
         <!-- Day 4 -->
-        <div class="td-card">
+        <div class="td-card" id="day-4">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
-                <span class="td-card-title">Day 4：2月22日（周六）杭州→上海，豫园灯会 · 农历正月初六（送穷日）</span>
+                <span class="td-card-title">Day 4：2月22日（周六）杭州午饭后→上海，豫园灯会 · 农历正月初六（送穷日）</span>
             </div>
             <div class="td-message td-message-info">
                 <i class="t-icon t-icon-car"></i>
-                <strong>自驾路线</strong>：西溪湿地 → 沪杭高速(G60) → 上海，全程约180公里，预计2.5小时
+                <strong>自驾路线</strong>：杭州 → 沪杭高速(G60) → 上海，全程约180公里，预计2.5小时
             </div>
             <table class="td-table">
                 <thead>
@@ -1453,33 +1822,43 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>08:00-09:00</strong></td>
+                        <td><strong>08:00-10:00</strong></td>
                         <td>
-                            酒店退房，早餐后出发前往上海
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 杭州特色早餐+河坊街早游</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">杭州小笼包</span>
+                                <span class="td-tag td-tag-success">河坊街晨景</span>
+                                <span class="td-tag td-tag-warning">南宋御街</span>
+                            </div>
                         </td>
                         <td>
-                            <div class="td-message td-message-warning">
-                                <i class="t-icon t-icon-error-circle"></i> 春节期间高速可能拥堵，预留充足时间
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 推荐：知味观（河坊街店）或 新丰小吃<br>
+                                <i class="t-icon t-icon-time"></i> 早餐时间：06:30-10:00<br>
+                                <i class="t-icon t-icon-edit"></i> 早上去河坊街人少，适合拍照
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>09:00-11:30</strong></td>
+                        <td><strong>10:00-12:00</strong></td>
                         <td>
-                            <i class="t-icon t-icon-car"></i> 自驾至上海，沿途服务区休息
-                        </td>
-                        <td>
-                            <span class="td-tag td-tag-primary">推荐：嘉兴服务区（中途休息）</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>11:30-12:00</strong></td>
-                        <td>
-                            抵达上海酒店（建议选择人民广场/南京路商圈），办理入住
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-building-1"></i> 河坊街+南宋御街深度游览</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">胡庆余堂</span>
+                                <span class="td-tag td-tag-success">吴山广场</span>
+                                <span class="td-tag td-tag-warning">南宋御街</span>
+                                <span class="td-tag td-tag-primary">杭州博物馆</span>
+                            </div>
                         </td>
                         <td>
                             <div class="td-message td-message-info">
-                                <i class="t-icon t-icon-shop"></i> 停车：酒店地下停车场或周边公共停车场
+                                <i class="t-icon t-icon-shop"></i> 特色店铺：张小泉剪刀、王星记扇子、方回春堂<br>
+                                <i class="t-icon t-icon-edit"></i> 杭州博物馆免费开放，凭身份证进入<br>
+                                <i class="t-icon t-icon-time"></i> 建议游览顺序：河坊街 → 吴山广场 → 南宋御街 → 杭州博物馆
                             </div>
                         </td>
                     </tr>
@@ -1487,23 +1866,50 @@
                         <td><strong>12:00-13:30</strong></td>
                         <td>
                             <div style="margin-bottom: 8px;">
-                                <strong><i class="t-icon t-icon-fork-knife"></i> 午餐：南翔馒头店（豫园店）</strong>
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 河坊街附近特色午餐</strong>
                             </div>
                             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                                <span class="td-tag td-tag-error">🥟 蟹粉小笼包</span>
-                                <span class="td-tag td-tag-success">🥟 鲜肉小笼</span>
-                                <span class="td-tag td-tag-warning">🍜 虾仁馄饨</span>
+                                <span class="td-tag td-tag-error">西湖醋鱼</span>
+                                <span class="td-tag td-tag-success">龙井虾仁</span>
+                                <span class="td-tag td-tag-warning">叫花鸡</span>
+                                <span class="td-tag td-tag-primary">东坡肉</span>
                             </div>
                         </td>
                         <td>
-                            <span class="td-badge">人均80元</span>
+                            <span class="td-badge">人均100元</span>
                             <div style="margin-top: 8px; font-size: 13px;">
-                                <i class="t-icon t-icon-time"></i> 春节排队1-2小时，建议11:30前到
+                                <i class="t-icon t-icon-shop"></i> 推荐：楼外楼（孤山店）或 新白鹿餐厅（西湖文化广场店）<br>
+                                <i class="t-icon t-icon-time"></i> 建议提前预约<br>
+                                <i class="t-icon t-icon-edit"></i> 距离河坊街较近，方便午饭后直接出发
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>13:30-16:00</strong></td>
+                        <td>
+                            <i class="t-icon t-icon-car"></i> 自驾杭州→上海，沿途服务区休息
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i> 春节期间高速可能拥堵，预留充足时间<br>
+                                <i class="t-icon t-icon-shop"></i> 推荐：嘉兴服务区（中途休息，有嘉兴粽子）
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>16:00-17:00</strong></td>
+                        <td>
+                            抵达上海酒店（建议选择人民广场/南京路商圈），办理入住
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 停车：酒店地下停车场或周边公共停车场<br>
+                                <i class="t-icon t-icon-time"></i> 办理入住后稍作休息
                             </div>
                         </td>
                     </tr>
                     <tr style="background: var(--td-brand-color-light-9);">
-                        <td><strong>14:00-18:00</strong></td>
+                        <td><strong>17:00-19:00</strong></td>
                         <td>
                             <div style="margin-bottom: 10px;">
                                 <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-gift"></i> 豫园+老城隍庙+九曲桥</strong>
@@ -1524,23 +1930,8 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td><strong>16:00-17:00</strong></td>
-                        <td>
-                            <strong><i class="t-icon t-icon-fork-knife"></i> 下午茶：湖心亭茶楼（九曲桥上）</strong>
-                            <div style="color: var(--td-text-color-secondary); font-size: 13px; margin-top: 4px;">
-                                体验老上海茶文化
-                            </div>
-                        </td>
-                        <td>
-                            <span class="td-badge">人均60元</span>
-                            <div style="margin-top: 8px; font-size: 13px;">
-                                <i class="t-icon t-icon-edit"></i> 龙井茶、瓜子、话梅
-                            </div>
-                        </td>
-                    </tr>
                     <tr style="background: var(--td-warning-color-light);">
-                        <td><strong>17:30-20:30</strong></td>
+                        <td><strong>18:00-21:00</strong></td>
                         <td>
                             <div style="margin-bottom: 10px;">
                                 <strong style="color: var(--td-warning-color);"><i class="t-icon t-icon-star"></i> 豫园新春灯会（重点推荐！）</strong>
@@ -1552,16 +1943,16 @@
                         <td>
                             <div class="td-message td-message-error">
                                 <i class="t-icon t-icon-error-circle"></i> <strong>人流超多！</strong><br>
-                                建议17:30前进入（天黑前）<br>
+                                建议18:00前进入（天黑前）<br>
                                 注意保管财物，照看孩子
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>18:30-20:00</strong></td>
+                        <td><strong>19:00-20:30</strong></td>
                         <td>
                             <div style="margin-bottom: 8px;">
-                                <strong><i class="t-icon t-icon-fork-knife"></i> 晚餐：绿波廊（豫园店）或 沈大成（南京东路店）</strong>
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 上海晚餐：绿波廊（豫园店）或 沈大成（南京东路店）</strong>
                             </div>
                             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                                 <span class="td-tag td-tag-error">🐟 本帮菜</span>
@@ -1570,8 +1961,11 @@
                             </div>
                         </td>
                         <td>
-                            <span class="td-badge">绿波廊 人均200元</span>
-                            <span class="td-badge">沈大成 人均50元</span>
+                            <div class="td-message td-message-info">
+                                <span class="td-badge">绿波廊 人均200元</span>
+                                <span class="td-badge">沈大成 人均50元</span><br>
+                                <i class="t-icon t-icon-time"></i> 建议错峰用餐或外卖
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1638,7 +2032,7 @@
         <div class="td-divider"></div>
 
         <!-- Day 5 -->
-        <div class="td-card">
+        <div class="td-card" id="day-5">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
                 <span class="td-card-title">Day 5：2月23日（周日）外滩+南京路购物 · 农历正月初七</span>
@@ -1848,7 +2242,7 @@
         <div class="td-divider"></div>
 
         <!-- Day 6 -->
-        <div class="td-card">
+        <div class="td-card" id="day-6">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
                 <span class="td-card-title">Day 6：2月24日（周一）上海迪士尼 · 农历正月初八</span>
@@ -1981,7 +2375,7 @@
         <div class="td-divider"></div>
 
         <!-- Day 7 -->
-        <div class="td-card">
+        <div class="td-card" id="day-7">
             <div class="td-card-header">
                 <i class="t-icon t-icon-flag"></i>
                 <span class="td-card-title">Day 7：2月25日（周二）东方明珠+陆家嘴，返程 · 农历正月初九</span>
@@ -2518,6 +2912,57 @@
                 statusIndicator.textContent = '';
             }
         }
+    </script>
+    
+    <!-- 快速导航条脚本 -->
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有日期项和Day区域
+            const dateItems = document.querySelectorAll('.date-item');
+            const daySections = {};
+            
+            // 初始化Day区域位置
+            for (let i = 1; i <= 7; i++) {
+                daySections[`day-${i}`] = document.getElementById(`day-${i}`);
+            }
+            
+            // 获取当前日期
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            
+            // 初始化当前日期高亮
+            dateItems.forEach(item => {
+                const dateStr = item.dataset.date;
+                if (dateStr === todayStr) {
+                    item.classList.add('today');
+                }
+            });
+            
+            // 日期点击事件
+            dateItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 移除所有选中状态
+                    dateItems.forEach(li => li.classList.remove('selected'));
+                    // 添加当前选中状态
+                    this.classList.add('selected');
+                    
+                    // 获取对应的Day ID
+                    const dayId = this.dataset.day;
+                    const targetSection = daySections[dayId];
+                    
+                    // 平滑滚动到目标区域（≤300ms响应）
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+
     </script>
 </body>
 </html>
