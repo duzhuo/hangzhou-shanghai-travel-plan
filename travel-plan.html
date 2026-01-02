@@ -1,0 +1,3002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州-上海春节自驾游深度规划方案</title>
+    <!-- TDesign CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tdesign-web@latest/dist/tdesign.min.css">
+    <!-- TDesign Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@tencent/tdesign-icons@latest/dist/index.css">
+    <style>
+        :root {
+            /* TDesign 品牌色系统 */
+            --td-brand-color: #0052D9;
+            --td-brand-color-light-1: #2E72F7;
+            --td-brand-color-light-2: #4787FF;
+            --td-brand-color-light-3: #699EFF;
+            --td-brand-color-light-4: #85B5FF;
+            --td-brand-color-light-5: #A6C6FF;
+            --td-brand-color-light-6: #C5D6FF;
+            --td-brand-color-light-7: #DEEAFF;
+            --td-brand-color-light-8: #ECF2FE;
+            --td-brand-color-light-9: #F2F5FC;
+            
+            /* 功能色 */
+            --td-success-color: #00A870;
+            --td-success-color-light: #E3F9F0;
+            --td-warning-color: #ED7B2F;
+            --td-warning-color-light: #FFF1E9;
+            --td-error-color: #E34D59;
+            --td-error-color-light: #FFECE8;
+            
+            /* 中性色 */
+            --td-gray-color-1: #F3F3F3;
+            --td-gray-color-2: #EEEEEE;
+            --td-gray-color-3: #E7E7E7;
+            --td-gray-color-4: #DCDCDC;
+            --td-gray-color-5: #C5C5C5;
+            --td-gray-color-6: #A6A6A6;
+            --td-gray-color-7: #8B8B8B;
+            --td-gray-color-8: #777777;
+            --td-gray-color-9: #5E5E5E;
+            --td-gray-color-10: #4B4B4B;
+            
+            /* 文本色 */
+            --td-text-color-primary: rgba(0, 0, 0, 0.9);
+            --td-text-color-secondary: rgba(0, 0, 0, 0.6);
+            --td-text-color-placeholder: rgba(0, 0, 0, 0.4);
+            --td-text-color-disabled: rgba(0, 0, 0, 0.26);
+            
+            /* 间距系统 */
+            --td-spacer-1: 4px;
+            --td-spacer-2: 8px;
+            --td-spacer-3: 12px;
+            --td-spacer-4: 16px;
+            --td-spacer-5: 20px;
+            --td-spacer-6: 24px;
+            --td-spacer-7: 32px;
+            --td-spacer-8: 40px;
+            --td-spacer-9: 48px;
+            
+            /* 圆角 */
+            --td-radius-small: 3px;
+            --td-radius-medium: 6px;
+            --td-radius-large: 9px;
+            --td-radius-extraLarge: 12px;
+            
+            /* 阴影 */
+            --td-shadow-1: 0 1px 4px rgba(0, 0, 0, 0.08);
+            --td-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --td-shadow-3: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --td-shadow-4: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--td-text-color-primary);
+            background-color: var(--td-gray-color-1);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* 容器 */
+        .page-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: var(--td-spacer-6);
+            display: flex;
+            gap: var(--td-spacer-6);
+        }
+        
+        /* 左侧快速导航条 */
+        .quick-nav {
+            width: 280px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: var(--td-radius-large);
+            box-shadow: var(--td-shadow-3);
+            padding: var(--td-spacer-6);
+            position: sticky;
+            top: var(--td-spacer-6);
+            height: calc(100vh - 48px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        /* 滚动条样式 */
+        .quick-nav::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-track {
+            background: #f1f3f5;
+            border-radius: 3px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-thumb {
+            background: var(--td-brand-color-light-5);
+            border-radius: 3px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-thumb:hover {
+            background: var(--td-brand-color-light-3);
+        }
+        
+        /* 主内容区 */
+        .main-content {
+            flex: 1;
+        }
+        
+        /* 导航条样式 */
+        .nav-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--td-text-color-primary);
+            margin-bottom: var(--td-spacer-6);
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-3);
+            padding-bottom: var(--td-spacer-4);
+            border-bottom: 2px solid var(--td-brand-color-light-7);
+        }
+        
+        .nav-title i {
+            color: var(--td-brand-color);
+            font-size: 22px;
+        }
+        
+        /* 日期网格样式 */
+        .date-grid {
+            display: grid;
+            gap: var(--td-spacer-3);
+        }
+        
+        /* Day标签样式 */
+        .day-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+            margin-right: var(--td-spacer-2);
+            display: inline;
+        }
+        
+        /* 日期项样式 */
+        .date-item {
+            padding: var(--td-spacer-3);
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            border: 1px solid var(--td-gray-color-3);
+            border-radius: var(--td-radius-large);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            box-shadow: var(--td-shadow-1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .date-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--td-brand-color-light-5);
+            transition: all 0.3s ease;
+        }
+        
+        .date-item:hover {
+            background: linear-gradient(135deg, var(--td-brand-color-light-8) 0%, #ffffff 100%);
+            border-color: var(--td-brand-color-light-4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--td-shadow-3);
+        }
+        
+        .date-item:hover::before {
+            background: var(--td-brand-color);
+            width: 8px;
+        }
+        
+        /* 当前日期样式 */
+        .date-item.today {
+            background: linear-gradient(135deg, var(--td-brand-color) 0%, var(--td-brand-color-light-2) 100%);
+            color: white;
+            border-color: var(--td-brand-color);
+            box-shadow: var(--td-shadow-4);
+        }
+        
+        .date-item.today::before {
+            background: #ffffff;
+            width: 8px;
+        }
+        
+        /* 选中日期样式 */
+        .date-item.selected {
+            background: #f0f9ff;
+            border: 2px solid var(--td-success-color);
+            color: #000000 !important;
+            box-shadow: var(--td-shadow-3);
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .date-item.selected::before {
+            background: var(--td-success-color);
+            width: 8px;
+        }
+        
+        /* 日期项内部布局调整，确保两行显示 */
+        .date-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--td-spacer-1);
+            align-items: flex-start;
+        }
+        
+        /* 第一行：Day x + 日期数字 */
+        .date-item .first-row {
+            display: flex;
+            align-items: baseline;
+            gap: var(--td-spacer-2);
+            width: 100%;
+        }
+        
+        /* 第二行：农历日期 + 地点 */
+        .date-item .second-row {
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+            width: 100%;
+        }
+        
+        /* 确保所有状态下文字颜色正确 */
+        .date-item.selected .day-label,
+        .date-item.selected .date-number,
+        .date-item.selected .lunar-date,
+        .date-item.selected .date-location {
+            color: #000000 !important;
+        }
+        
+        /* Day标签样式 */
+        .day-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+        }
+        
+        /* 日期数字样式 */
+        .date-number {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        /* 农历日期样式 */
+        .lunar-date {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        /* 地点样式 */
+        .date-location {
+            font-size: 12px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        
+
+        
+        /* 当天日期的子元素样式 */
+        .date-item.today .day-label,
+        .date-item.today .date-number,
+        .date-item.today .lunar-date,
+        .date-item.today .date-location {
+            color: white;
+        }
+        
+        /* 选中状态的Day标签颜色 */
+        .date-item.selected .day-label {
+            color: #000000 !important;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .quick-nav {
+                width: 260px;
+                height: calc(100vh - 48px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .quick-nav {
+                width: 100%;
+                position: static;
+                height: 300px;
+                margin-bottom: var(--td-spacer-6);
+            }
+            
+            .date-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--td-spacer-3);
+            }
+            
+            .date-item {
+                padding: var(--td-spacer-4);
+            }
+            
+            .date-number {
+                font-size: 20px;
+            }
+            
+            .lunar-date {
+                font-size: 12px;
+            }
+            
+            .date-location {
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quick-nav {
+                padding: var(--td-spacer-5);
+                height: 250px;
+            }
+            
+            .nav-title {
+                font-size: 18px;
+                margin-bottom: var(--td-spacer-5);
+            }
+            
+            .date-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .date-item {
+                padding: var(--td-spacer-3);
+            }
+            
+            .date-number {
+                font-size: 18px;
+            }
+            
+            .lunar-date {
+                font-size: 11px;
+                margin-bottom: var(--td-spacer-2);
+            }
+            
+            .date-location {
+                font-size: 12px;
+            }
+        }
+        
+        /* 标题系统 */
+        .page-header {
+            background: linear-gradient(135deg, var(--td-brand-color) 0%, var(--td-brand-color-light-2) 100%);
+            padding: var(--td-spacer-8) var(--td-spacer-6);
+            border-radius: var(--td-radius-large);
+            margin-bottom: var(--td-spacer-6);
+            color: white;
+            box-shadow: var(--td-shadow-2);
+        }
+        
+        .page-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: var(--td-spacer-2);
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-3);
+        }
+        
+        .page-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* 卡片组件 */
+        .td-card {
+            background: white;
+            border-radius: var(--td-radius-large);
+            padding: var(--td-spacer-6);
+            margin-bottom: var(--td-spacer-6);
+            box-shadow: var(--td-shadow-1);
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+        }
+        
+        .td-card:hover {
+            box-shadow: var(--td-shadow-3);
+            transform: translateY(-2px);
+        }
+        
+        .td-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+            margin-bottom: var(--td-spacer-5);
+            padding-bottom: var(--td-spacer-4);
+            border-bottom: 1px solid var(--td-gray-color-2);
+        }
+        
+        .td-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--td-text-color-primary);
+        }
+        
+        /* 日历网格 */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: var(--td-spacer-4);
+        }
+        
+        .calendar-item {
+            background: white;
+            border: 1px solid var(--td-gray-color-3);
+            border-radius: var(--td-radius-medium);
+            padding: var(--td-spacer-5);
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .calendar-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--td-brand-color);
+            transform: scaleX(0);
+            transition: transform 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+        }
+        
+        .calendar-item:hover {
+            border-color: var(--td-brand-color);
+            box-shadow: var(--td-shadow-2);
+        }
+        
+        .calendar-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .calendar-clickable:active {
+            transform: translateY(-1px);
+            box-shadow: var(--td-shadow-3);
+        }
+        
+        .calendar-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+            margin-bottom: var(--td-spacer-1);
+        }
+        
+        .calendar-lunar {
+            font-size: 12px;
+            color: var(--td-text-color-secondary);
+            margin-bottom: var(--td-spacer-3);
+        }
+        
+        .calendar-icon {
+            font-size: 32px;
+            color: var(--td-brand-color-light-3);
+            margin: var(--td-spacer-3) 0;
+        }
+        
+        .calendar-location {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--td-text-color-primary);
+        }
+        
+        /* 表格组件 */
+        .td-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--td-radius-medium);
+            overflow: hidden;
+            border: 1px solid var(--td-gray-color-3);
+        }
+        
+        .td-table thead {
+            background: var(--td-gray-color-1);
+        }
+        
+        .td-table th {
+            padding: var(--td-spacer-4);
+            text-align: left;
+            font-weight: 600;
+            color: var(--td-text-color-primary);
+            font-size: 14px;
+            border-bottom: 1px solid var(--td-gray-color-3);
+        }
+        
+        .td-table td {
+            padding: var(--td-spacer-4);
+            border-bottom: 1px solid var(--td-gray-color-2);
+            font-size: 14px;
+            vertical-align: top;
+        }
+        
+        .td-table tbody tr:hover {
+            background: var(--td-brand-color-light-9);
+        }
+        
+        .td-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* 标签组件 */
+        .td-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px var(--td-spacer-2);
+            border-radius: var(--td-radius-small);
+            font-size: 12px;
+            font-weight: 500;
+            margin: 2px var(--td-spacer-1);
+            transition: all 0.2s;
+        }
+        
+        .td-tag-primary {
+            background: var(--td-brand-color-light-8);
+            color: var(--td-brand-color);
+            border: 1px solid var(--td-brand-color-light-6);
+        }
+        
+        .td-tag-success {
+            background: var(--td-success-color-light);
+            color: var(--td-success-color);
+            border: 1px solid var(--td-success-color);
+        }
+        
+        .td-tag-warning {
+            background: var(--td-warning-color-light);
+            color: var(--td-warning-color);
+            border: 1px solid var(--td-warning-color);
+        }
+        
+        .td-tag-error {
+            background: var(--td-error-color-light);
+            color: var(--td-error-color);
+            border: 1px solid var(--td-error-color);
+        }
+        
+        /* 消息提示组件 */
+        .td-message {
+            padding: var(--td-spacer-3) var(--td-spacer-4);
+            border-radius: var(--td-radius-medium);
+            margin: var(--td-spacer-2) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+            font-size: 14px;
+        }
+        
+        .td-message-info {
+            background: var(--td-brand-color-light-9);
+            border-left: 3px solid var(--td-brand-color);
+            color: var(--td-text-color-primary);
+        }
+        
+        .td-message-success {
+            background: var(--td-success-color-light);
+            border-left: 3px solid var(--td-success-color);
+            color: var(--td-text-color-primary);
+        }
+        
+        .td-message-warning {
+            background: var(--td-warning-color-light);
+            border-left: 3px solid var(--td-warning-color);
+            color: var(--td-text-color-primary);
+        }
+        
+        .td-message-error {
+            background: var(--td-error-color-light);
+            border-left: 3px solid var(--td-error-color);
+            color: var(--td-text-color-primary);
+        }
+        
+        /* 徽章组件 */
+        .td-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px var(--td-spacer-3);
+            border-radius: var(--td-radius-extraLarge);
+            font-size: 13px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--td-brand-color), var(--td-brand-color-light-2));
+            color: white;
+            box-shadow: var(--td-shadow-1);
+        }
+        
+        /* 历史文化卡片 */
+        .history-card {
+            background: linear-gradient(135deg, #F2F5FC 0%, #FFFFFF 100%);
+            border-left: 4px solid var(--td-brand-color);
+            padding: var(--td-spacer-6);
+            margin: var(--td-spacer-6) 0;
+            border-radius: var(--td-radius-large);
+            box-shadow: var(--td-shadow-1);
+        }
+        
+        .history-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+            margin-bottom: var(--td-spacer-4);
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+        }
+        
+        .history-card p {
+            margin-bottom: var(--td-spacer-3);
+            line-height: 1.8;
+            color: var(--td-text-color-primary);
+        }
+        
+        .history-highlight {
+            background: var(--td-warning-color-light);
+            padding: 2px 6px;
+            border-radius: var(--td-radius-small);
+            font-weight: 600;
+            color: var(--td-warning-color);
+        }
+        
+        /* 服装指南网格 */
+        .clothing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--td-spacer-4);
+        }
+        
+        .clothing-item {
+            background: white;
+            border: 1px solid var(--td-gray-color-3);
+            border-radius: var(--td-radius-medium);
+            padding: var(--td-spacer-5);
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+        }
+        
+        .clothing-item:hover {
+            border-color: var(--td-brand-color);
+            box-shadow: var(--td-shadow-2);
+        }
+        
+        .clothing-icon {
+            font-size: 36px;
+            color: var(--td-brand-color);
+            margin-bottom: var(--td-spacer-3);
+        }
+        
+        .clothing-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--td-spacer-2);
+            color: var(--td-text-color-primary);
+        }
+        
+        .clothing-desc {
+            font-size: 13px;
+            color: var(--td-text-color-secondary);
+            line-height: 1.6;
+        }
+        
+        /* 分隔线 */
+        .td-divider {
+            height: 1px;
+            background: var(--td-gray-color-3);
+            margin: var(--td-spacer-6) 0;
+        }
+        
+        /* 时间轴 */
+        .timeline-item {
+            display: flex;
+            gap: var(--td-spacer-4);
+            margin-bottom: var(--td-spacer-5);
+        }
+        
+        .timeline-time {
+            min-width: 120px;
+            font-weight: 600;
+            color: var(--td-brand-color);
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-bottom: var(--td-spacer-4);
+            border-bottom: 1px solid var(--td-gray-color-2);
+        }
+        
+        .timeline-content:last-child {
+            border-bottom: none;
+        }
+        
+        /* 图标 */
+        .td-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+        }
+
+        /* 诗词展示模块 */
+        .poem-section {
+            background: linear-gradient(135deg, #FFF8DC 0%, #FFFAF0 100%);
+            border: 1px solid #DEB887;
+            border-radius: var(--td-radius-large);
+            padding: var(--td-spacer-6);
+            margin: var(--td-spacer-6) 0;
+            box-shadow: var(--td-shadow-2);
+        }
+
+        .poem-section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #8B4513;
+            margin-bottom: var(--td-spacer-5);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--td-spacer-2);
+        }
+
+        .poem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--td-spacer-4);
+        }
+
+        .poem-card {
+            background: white;
+            border: 1px solid #D2B48C;
+            border-radius: var(--td-radius-medium);
+            padding: var(--td-spacer-5);
+            transition: all 0.3s cubic-bezier(0.38, 0, 0.24, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #8B4513 0%, #A0522D 100%);
+        }
+
+        .poem-card:hover {
+            box-shadow: var(--td-shadow-3);
+            transform: translateY(-3px);
+            border-color: #8B4513;
+        }
+
+        .poem-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #8B4513;
+            margin-bottom: var(--td-spacer-2);
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+        }
+
+        .poem-author {
+            font-size: 14px;
+            color: #A0522D;
+            margin-bottom: var(--td-spacer-3);
+            font-style: italic;
+        }
+
+        .poem-content {
+            font-size: 15px;
+            line-height: 2.2;
+            color: #333333;
+            font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            margin-top: var(--td-spacer-3);
+            padding: var(--td-spacer-3);
+            background: linear-gradient(135deg, #FFFAF0 0%, #FFF8DC 100%);
+            border-radius: var(--td-radius-small);
+        }
+
+        .poem-line {
+            margin: var(--td-spacer-1) 0;
+            white-space: pre-wrap;
+        }
+
+        .poem-highlight {
+            color: #8B4513;
+            font-weight: 600;
+        }
+
+        /* 可折叠历史模块 */
+        .history-collapsible {
+            background: linear-gradient(135deg, #F2F5FC 0%, #FFFFFF 100%);
+            border: 1px solid #DEB887;
+            border-radius: var(--td-radius-large);
+            padding: var(--td-spacer-6);
+            margin: var(--td-spacer-6) 0;
+            box-shadow: var(--td-shadow-2);
+        }
+
+        .history-collapsible-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding-bottom: var(--td-spacer-4);
+            border-bottom: 1px solid var(--td-gray-color-3);
+            transition: background-color 0.2s;
+        }
+
+        .history-collapsible-header:hover {
+            background-color: var(--td-brand-color-light-9);
+        }
+
+        .history-collapsible-title {
+            display: flex;
+            align-items: center;
+            gap: var(--td-spacer-2);
+        }
+
+        .history-collapsible-icon {
+            transition: transform 0.3s ease;
+            color: var(--td-brand-color);
+        }
+
+        .history-collapsible-icon.expanded {
+            transform: rotate(180deg);
+        }
+
+        .history-collapsible-toggle-text {
+            color: var(--td-brand-color);
+            font-weight: 500;
+        }
+
+        .history-collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+            padding: 0;
+        }
+
+        .history-collapsible-content.expanded {
+            max-height: 5000px;
+            padding: var(--td-spacer-6);
+        }
+
+        .history-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #8B4513;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .history-section {
+            margin-bottom: 24px;
+        }
+
+        .history-section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 语音播报状态指示器 */
+        .tts-status-indicator {
+            display: none;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: var(--td-radius-medium);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--td-text-color-secondary);
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: all 0.3s cubic-bezier(0.38, 0, 0.24, 1);
+            background: var(--td-brand-color-light-9);
+        }
+
+        .tts-status-indicator.visible {
+            display: inline-flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tts-status-indicator.playing {
+            color: var(--td-brand-color);
+            background: var(--td-brand-color-light-8);
+        }
+
+        .tts-status-indicator.paused {
+            color: var(--td-warning-color);
+            background: var(--td-warning-color-light);
+        }
+        
+        /* 优化按钮容器布局 */
+        .history-collapsible-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        /* 增强按钮与状态指示器的间距 */
+        #tts-button-1 {
+            margin-right: 8px;
+        }
+
+        <!-- 响应式布局 */
+        @media (max-width: 1024px) {
+            .poem-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--td-spacer-4);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .poem-grid {
+                grid-template-columns: 1fr;
+                gap: var(--td-spacer-4);
+            }
+
+            .history-collapsible-content {
+                max-height: 4000px;
+            }
+        }
+        
+        /* 底部信息 */
+        .footer-message {
+            background: linear-gradient(135deg, var(--td-brand-color), var(--td-brand-color-light-2));
+            color: white;
+            padding: var(--td-spacer-7);
+            border-radius: var(--td-radius-large);
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: var(--td-spacer-8);
+            box-shadow: var(--td-shadow-3);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .page-container {
+                padding: var(--td-spacer-4);
+            }
+            
+            .page-title {
+                font-size: 24px;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: var(--td-spacer-3);
+            }
+            
+            .clothing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .td-table {
+                font-size: 12px;
+            }
+            
+            .td-table th,
+            .td-table td {
+                padding: var(--td-spacer-2);
+            }
+        }
+        
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .td-card {
+                box-shadow: none;
+                border: 1px solid var(--td-gray-color-3);
+                break-inside: avoid;
+            }
+            
+            .history-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- 左侧快速导航条 -->
+        <div class="quick-nav">
+            <h3 class="nav-title">
+                <i class="t-icon t-icon-calendar"></i>
+                行程快速导航
+            </h3>
+            <!-- 日期网格 -->
+            <div class="date-grid">
+                <!-- 日期项 -->
+                <div class="date-item" data-day="day-1" data-date="2026-02-19">
+                    <div class="first-row">
+                        <div class="day-label">Day 1</div>
+                        <div class="date-number">19</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初三</div>
+                        <div class="date-location">抵达杭州</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-2" data-date="2026-02-20">
+                    <div class="first-row">
+                        <div class="day-label">Day 2</div>
+                        <div class="date-number">20</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初四</div>
+                        <div class="date-location">杭州 · 西湖</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-3" data-date="2026-02-21">
+                    <div class="first-row">
+                        <div class="day-label">Day 3</div>
+                        <div class="date-number">21</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初五</div>
+                        <div class="date-location">杭州 · 灵隐寺·西溪</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-4" data-date="2026-02-22">
+                    <div class="first-row">
+                        <div class="day-label">Day 4</div>
+                        <div class="date-number">22</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初六</div>
+                        <div class="date-location">上海 · 豫园灯会</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-5" data-date="2026-02-23">
+                    <div class="first-row">
+                        <div class="day-label">Day 5</div>
+                        <div class="date-number">23</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初七</div>
+                        <div class="date-location">上海 · 外滩·南京路</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-6" data-date="2026-02-24">
+                    <div class="first-row">
+                        <div class="day-label">Day 6</div>
+                        <div class="date-number">24</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初八</div>
+                        <div class="date-location">上海 · 迪士尼</div>
+                    </div>
+                </div>
+                <div class="date-item" data-day="day-7" data-date="2026-02-25">
+                    <div class="first-row">
+                        <div class="day-label">Day 7</div>
+                        <div class="date-number">25</div>
+                    </div>
+                    <div class="second-row">
+                        <div class="lunar-date">正月初九</div>
+                        <div class="date-location">上海 · 东方明珠</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 页面标题 -->
+            <div class="page-header">
+                <div class="page-title">
+                    <i class="t-icon t-icon-location"></i>
+                    杭州-上海春节自驾游深度规划方案
+                </div>
+                <div class="page-subtitle">探索江浙沪春节文化的完美旅程，融合历史文化与现代都市体验</div>
+            </div>
+
+        <!-- 行程日历总览 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-calendar"></i>
+                <span class="td-card-title">行程日历总览</span>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-item calendar-clickable" data-day="day-1" data-date="2026-02-19">
+                    <div class="calendar-date">2月19日</div>
+                    <div class="calendar-lunar">周四 · 农历正月初三</div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-car"></i></div>
+                    <div class="calendar-location">抵达杭州</div>
+                </div>
+                <div class="calendar-item calendar-clickable" data-day="day-2" data-date="2026-02-20">
+                    <div class="calendar-date">2月20日</div>
+                    <div class="calendar-lunar">周五 · 农历正月初四 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-building-1"></i></div>
+                    <div class="calendar-location">杭州 · 西湖</div>
+                </div>
+                <div class="calendar-item calendar-clickable" data-day="day-3" data-date="2026-02-21">
+                    <div class="calendar-date">2月21日</div>
+                    <div class="calendar-lunar">周六 · 农历正月初五 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-temple-heaven"></i></div>
+                    <div class="calendar-location">杭州 · 灵隐寺·西溪</div>
+                </div>
+                <div class="calendar-item calendar-clickable" data-day="day-4" data-date="2026-02-22">
+                    <div class="calendar-date">2月22日</div>
+                    <div class="calendar-lunar">周日 · 农历正月初六</div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-gift"></i></div>
+                    <div class="calendar-location">上海 · 豫园灯会</div>
+                </div>
+                <div class="calendar-item calendar-clickable" data-day="day-5" data-date="2026-02-23">
+                    <div class="calendar-date">2月23日</div>
+                    <div class="calendar-lunar">周一 · 农历正月初七 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-building-2"></i></div>
+                    <div class="calendar-location">上海 · 外滩·南京路</div>
+                </div>
+                <div class="calendar-item calendar-clickable" data-day="day-6" data-date="2026-02-24">
+                    <div class="calendar-date">2月24日</div>
+                    <div class="calendar-lunar">周二 · 农历正月初八 · <span style="color: var(--td-error-color); font-weight: 600;">请假</span></div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-castle"></i></div>
+                    <div class="calendar-location">上海 · 迪士尼</div>
+                </div>
+                <div class="calendar-item calendar-clickable" data-day="day-7" data-date="2026-02-25">
+                    <div class="calendar-date">2月25日</div>
+                    <div class="calendar-lunar">周三 · 农历正月初九</div>
+                    <div class="calendar-icon"><i class="t-icon t-icon-tower-clock"></i></div>
+                    <div class="calendar-location">上海 · 东方明珠</div>
+                </div>
+            </div>
+            <div class="td-message td-message-info" style="margin-top: var(--td-spacer-4);">
+                <i class="t-icon t-icon-info-circle"></i>
+                <strong>重要提示</strong>：2月20日、21日、23日、24日因事请假，实际行程为3天（2月19日抵达，2月22日和25日游玩）
+            </div>
+        </div>
+
+        <!-- 穿衣指南 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-clothes-suit"></i>
+                <span class="td-card-title">穿衣指南（春节期间江浙沪）</span>
+            </div>
+            <div class="td-message td-message-warning">
+                <i class="t-icon t-icon-error-circle"></i>
+                <strong>体感温度</strong>：2月中下旬杭州、上海气温约5-12℃，但<strong>湿冷刺骨</strong>，体感温度比实际低5℃左右
+            </div>
+            <div class="clothing-grid">
+                <div class="clothing-item">
+                    <div class="clothing-icon"><i class="t-icon t-icon-clothes-suit"></i></div>
+                    <div class="clothing-title">外层</div>
+                    <div class="clothing-desc">中长款羽绒服/厚大衣（必备）</div>
+                </div>
+                <div class="clothing-item">
+                    <div class="clothing-icon"><i class="t-icon t-icon-user"></i></div>
+                    <div class="clothing-title">内层</div>
+                    <div class="clothing-desc">保暖内衣+毛衣/卫衣叠穿</div>
+                </div>
+                <div class="clothing-item">
+                    <div class="clothing-icon"><i class="t-icon t-icon-user"></i></div>
+                    <div class="clothing-title">下装</div>
+                    <div class="clothing-desc">加绒裤/厚牛仔裤</div>
+                </div>
+                <div class="clothing-item">
+                    <div class="clothing-icon"><i class="t-icon t-icon-user"></i></div>
+                    <div class="clothing-title">配件</div>
+                    <div class="clothing-desc">围巾、手套、帽子（西湖边风大必备）</div>
+                </div>
+                <div class="clothing-item">
+                    <div class="clothing-icon"><i class="t-icon t-icon-shoes"></i></div>
+                    <div class="clothing-title">鞋履</div>
+                    <div class="clothing-desc">防水保暖运动鞋/短靴</div>
+                </div>
+                <div class="clothing-item">
+                    <div class="clothing-icon"><i class="t-icon t-icon-error-circle"></i></div>
+                    <div class="clothing-title">特别提醒</div>
+                    <div class="clothing-desc">室内外温差大，建议洋葱式穿搭便于增减</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="td-divider"></div>
+
+        <!-- 行程总览 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-info-circle"></i>
+                <span class="td-card-title">行程总览（2月19日-2月25日，共7天6晚）</span>
+            </div>
+            <div class="td-message td-message-info">
+                <i class="t-icon t-icon-check-circle"></i>
+                <div>
+                    <strong>城市顺序</strong>：杭州3天 → 上海3天（符合您的计划，顺路返程）<br>
+                    <strong>自驾里程</strong>：杭州至上海约180公里，车程2.5小时
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="td-card" id="day-1">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 1：2月19日（周三）晚抵达杭州 · 农历正月初三</span>
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>晚上</strong></td>
+                        <td>张家口自驾至杭州，入住西溪湿地酒店</td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i>
+                                长途驾驶注意安全，春节高速可能拥堵
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>夜宵</strong></td>
+                        <td>酒店周边觅食或休息</td>
+                        <td>
+                            <span class="td-tag td-tag-primary">推荐：外婆家（西溪印象城店）营业至22:00</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="td-card" id="day-2">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 2：2月20日（周四）西湖深度游+祈福 · 农历正月初四</span>
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">美食推荐 / 备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>08:00-09:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <i class="t-icon t-icon-car"></i> 酒店早餐后自驾前往西湖
+                            </div>
+                            <div style="color: var(--td-text-color-secondary); font-size: 13px;">
+                                <i class="t-icon t-icon-time"></i> 车程20分钟
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 停车：雷峰塔景区停车场
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>09:00-12:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);">雷峰塔 → 苏堤春晓 → 花港观鱼</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary"><i class="t-icon t-icon-temple-heaven"></i> 雷峰塔</span>
+                                <span class="td-tag td-tag-success"><i class="t-icon t-icon-tree"></i> 苏堤春晓</span>
+                                <span class="td-tag td-tag-primary"><i class="t-icon t-icon-edit"></i> 花港观鱼</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-edit"></i> 雷峰塔需提前1天预约<br>
+                                <small>"杭州西湖"公众号</small>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>12:00-13:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 午餐：楼外楼（孤山路店）</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">🐟 西湖醋鱼</span>
+                                <span class="td-tag td-tag-success">🦐 龙井虾仁</span>
+                                <span class="td-tag td-tag-warning">🍗 叫花鸡</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">人均150元</span>
+                            <div style="margin-top: 8px; font-size: 13px;">
+                                <i class="t-icon t-icon-calendar"></i> 提前2天美团预约
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>13:30-15:00</strong></td>
+                        <td>
+                            <strong><i class="t-icon t-icon-tools"></i> 环湖骑行</strong> 或 
+                            <strong><i class="t-icon t-icon-shop"></i> 游船（三潭印月）</strong>
+                        </td>
+                        <td>
+                            <div>
+                                <span class="td-tag td-tag-primary">共享单车 15元/小时</span>
+                                <span class="td-tag td-tag-primary">游船 55元/人</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>15:30-17:30</strong></td>
+                        <td>
+                            <strong style="color: var(--td-brand-color);">柳浪闻莺 → 清河坊历史街区</strong>
+                            <div style="color: var(--td-text-color-secondary); font-size: 13px; margin-top: 4px;">
+                                <i class="t-icon t-icon-gift"></i> 体验老杭州年味
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                清河坊有糖画、糖葫芦等春节小吃
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>17:30-19:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 晚餐：知味观（湖滨店）</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">🐱 猫耳朵</span>
+                                <span class="td-tag td-tag-success">🍜 片儿川</span>
+                                <span class="td-tag td-tag-warning">🥟 小笼包</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">人均80元</span>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                <i class="t-icon t-icon-time"></i> 翻台快，无需预约
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>19:00-20:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-play-circle"></i> 音乐喷泉（湖滨三公园）</strong>
+                            </div>
+                            <div style="font-size: 13px;">
+                                ⏰ 春节场次：19:30 / 20:30
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i> 提前30分钟占位<br>
+                                <i class="t-icon t-icon-error-circle"></i> 湖边风大注意保暖
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 西湖历史文化 -->
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(1)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">西湖历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-1" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(1);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-1" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-1"></i>
+                </div>
+            </div>
+            <div class="history-collapsible-content" id="history-content-1">
+                <!-- 一、西湖形成与演变 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        西湖形成与演变
+                    </h3>
+                    <p><strong>地质成因</strong>：西湖原为与钱塘江相连的浅海湾，后因泥沙淤积逐渐与江隔绝，形成泻湖。《宋史·河渠志》记载："西湖本钱塘江故道，江流至此回旋停蓄。"约在距今1.2万年前，杭州西湖形成初期为海湾，后经多次地壳运动和海平面变化，逐渐演变为内陆湖泊。</p>
+                    <p><strong>历代疏浚</strong>：历史上西湖曾数次疏浚治理。唐代的白居易任杭州刺史时，组织大规模疏浚工程，筑堤筑坝以防水患。宋代苏轼、杨万里等人亦多次主持西湖疏浚，筑成今日之苏堤、杨公堤等。《宋史·苏轼传》载："轼浚西湖，筑苏堤，以防水患。"明代疏浚更为频繁，据统计明代共疏浚西湖17次。清代康熙、乾隆年间均有大规模疏浚工程，奠定今日西湖格局。</p>
+                    <p><strong>水域变迁</strong>：古代西湖面积远大于今日。《梦粱录》记载："西湖周回三十里，广五百顷。"后因城市发展、淤积围垦等因素，西湖面积不断缩小。现代通过治理，西湖面积稳定在约6.38平方公里，平均水深2.27米，最深处达5米。2011年，杭州西湖文化景观被列入世界文化遗产名录。</p>
+                </div>
+
+                <!-- 二、历代诗词歌赋 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-edit"></i>
+                        历代诗词歌赋
+                    </h3>
+                    <p>西湖自古以来便是文人墨客吟咏之胜地，唐宋元明清各代留下无数佳篇。《全唐诗》中有关西湖的诗歌达300余首，宋词中以苏轼、柳永、辛弃疾等为代表。苏轼的《饮湖上初晴后雨》"欲把西湖比西子，淡妆浓抹总相宜"已成为西湖千古绝唱。白居易《钱塘湖春行》描绘"孤山寺北贾亭西，水面初平云脚低"的春日美景。杨万里《晓出净慈寺送林子方》"接天莲叶无穷碧，映日荷花别样红"展现夏日西湖盛景。明代袁宏道《西湖》诗："湖光山色共徘徊，半夜木樯惊起风雷。"清代龚自珍《己亥杂诗》亦有多首咏湖之作。元代张可久《西湖竹枝词》记述西湖四时之美。</p>
+                    <p style="margin-top: 12px;"><strong>诗词与景点</strong>：历代诗词与西湖十大景观紧密关联。"苏堤春晓"源于苏轼疏浚西湖筑成之堤，春日柳絮纷飞，美景如画。"断桥残雪"因白娘子与许仙断桥相会之传说，冬日断桥雪景更是诗家题咏焦点。"雷峰夕照"雷峰塔夕照，金光璀璨，历代文人墨客对此多有吟咏。《西湖游览志》载："西湖十景，始于南宋，成于清初。"诗词与景观互为映衬，形成独特的文化景观体系。</p>
+                </div>
+
+                <!-- 三、重要历史事件与人物典故 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-user"></i>
+                        重要历史事件与人物典故
+                    </h3>
+                    <p><strong>白娘子传说</strong>：白素贞为修炼千年之白蛇，在杭州西湖与许仙相知相爱，结为夫妻。法海和尚因拆散夫妻，将白娘子镇压于雷峰塔下。《西湖民间故事》记载："白娘子被压雷峰塔，许仙哭断桥。"此传说家喻户晓，是西湖文化的重要组成部分。1924年雷峰塔倒塌时，民间传说白娘子重获自由。现雷峰塔为2002年重建，成为杭州地标建筑。</p>
+                    <p><strong>西施与范蠡</strong>：相传春秋末期，越国美女西施浣纱于西湖（古称钱塘江），被越王勾践献给吴王夫差。范蠡功成身退，携西施泛舟湖上，隐居终老。《越绝书》载："西施浣纱于苎萝，范蠡浮舟而出。"此典故为西湖增添历史厚度，西湖周边有苎萝山、西施殿等遗迹与此传说相关。</p>
+                    <p><strong>名人与西湖</strong>：苏轼两度任职杭州，写下大量咏湖诗词，主持疏浚筑成苏堤。南宋岳飞被害后，其遗体归葬于西湖栖霞岭（今岳王庙）。《宋史·岳飞传》："飞葬栖霞岭。"明末清初，张岱、袁宏道等文人隐居西湖，著述立说。清乾隆帝六下江南，留有大量咏西湖御制诗。近代弘一法师、马一浮等高僧与西湖结下不解之缘，灵隐寺、净慈寺香火鼎盛。</p>
+                </div>
+
+                <!-- 四、古建筑与文物遗迹 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-1"></i>
+                        周边古建筑与文物遗迹
+                    </h3>
+                    <p><strong>西湖十景</strong>：南宋时定西湖十景，流传至今。苏堤春晓、曲院风荷、平湖秋月、断桥残雪、柳浪闻莺、花港观鱼、雷峰夕照、双峰插云、南屏晚钟、三潭印月。清代康熙帝南巡，将"雷峰西照"改为"雷峰夕照"，"双峰插云"改为"双峰插云"。西湖十景集自然美景与人文内涵于一体，是西湖文化的精华所在。</p>
+                    <p><strong>重要古建筑</strong>：灵隐寺始建于东晋咸和元年（326年），由印度僧人慧理创建，是中国佛教禅宗十刹之一。《灵隐寺志》载："山门对灵峰，天外有飞来。"寺内飞来峰有五代至宋代470多尊摩崖石刻造像，为国家重点文物保护单位。净慈寺始建于后周显德元年（954年），寺内有济公殿。岳王庙始建于南宋嘉定十四年（1221年），供奉岳飞。清河坊塔始建于北宋太平兴国二年（977年），为钱弘俶所建。</p>
+                    <p><strong>文物遗迹</strong>：西湖周边碑刻文物众多。灵隐寺飞来峰石刻、冷泉亭"龙井泉"石刻、苏小小墓碑等。龙井泉为乾隆帝御题"十八棵御茶树"所在地，为西湖文化重要标识。2000年后，西湖周边文物保护力度加大，新建多个博物馆。中国茶叶博物馆、中国丝绸博物馆、西湖博物馆等，全面展示西湖文化遗产。</p>
+                </div>
+
+                <!-- 五、传统民俗活动与节庆文化 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-gift"></i>
+                        传统民俗活动与节庆文化
+                    </h3>
+                    <p><strong>西湖龙舟竞渡</strong>：端午时节，西湖有盛大龙舟竞渡。《梦粱录》载："端午日，西湖龙舟竞渡。"各船队身着统一服饰，鼓乐喧天，两岸观者如云。龙舟竞渡不仅是体育竞技，更是祭祖祈福的重要仪式。现杭州每年端午节仍在西湖举办龙舟赛，吸引数万观众。</p>
+                    <p><strong>西湖庙会</strong>：传统西湖周边庙会盛行。灵隐寺观音庙会、岳王庙祭祀活动等。《西湖民间信仰研究》载："西湖庙会，香火鼎盛。"庙会期间，民间艺人表演舞龙舞、戏曲、杂技等，气氛热烈。岳王庙每年农历二月十二岳飞诞辰举行盛大庙会，民众络绎不绝，表达对民族英雄的崇敬。</p>
+                    <p><strong>节庆习俗</strong>：春节西湖周边张灯结彩，赏灯活动丰富多彩。元宵节西湖花灯如昼，文人雅士吟诗作对。西湖赏月之风盛行，中秋之夜，湖心亭、断桥等地赏月之人如织。冬至西湖踏雪，文人墨客题咏西湖雪景。这些民俗活动形成西湖独特的文化生态，丰富了西湖文化内涵。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《宋史·河渠志》《梦粱录》《西湖游览志》《灵隐寺志》《越绝书》《西湖民间故事》《全唐诗》《西湖民间信仰研究》等</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 西湖诗韵 -->
+        <div class="poem-section">
+            <div class="poem-section-title">
+                <i class="t-icon t-icon-edit"></i>
+                西湖诗韵 · 千年传唱
+            </div>
+            <div class="poem-grid">
+                <!-- 诗词1 -->
+                <div class="poem-card">
+                    <div class="poem-title">《饮湖上初晴后雨》</div>
+                    <div class="poem-author">【宋】苏轼</div>
+                    <div class="poem-content">
+                        <div class="poem-line">水光潋滟晴方好，</div>
+                        <div class="poem-line">山色空蒙雨亦奇。</div>
+                        <div class="poem-line">欲把西湖比西子，</div>
+                        <div class="poem-line"><span class="poem-highlight">淡妆浓抹总相宜。</span></div>
+                    </div>
+                </div>
+
+                <!-- 诗词2 -->
+                <div class="poem-card">
+                    <div class="poem-title">《晓出净慈寺送林子方》</div>
+                    <div class="poem-author">【宋】杨万里</div>
+                    <div class="poem-content">
+                        <div class="poem-line">毕竟西湖六月中，</div>
+                        <div class="poem-line">风光不与四时同。</div>
+                        <div class="poem-line">接天莲叶无穷碧，</div>
+                        <div class="poem-line"><span class="poem-highlight">映日荷花别样红。</span></div>
+                    </div>
+                </div>
+
+                <!-- 诗词3 -->
+                <div class="poem-card">
+                    <div class="poem-title">《钱塘湖春行》</div>
+                    <div class="poem-author">【唐】白居易</div>
+                    <div class="poem-content">
+                        <div class="poem-line">孤山寺北贾亭西，</div>
+                        <div class="poem-line">水面初平云脚低。</div>
+                        <div class="poem-line">几处早莺争暖树，</div>
+                        <div class="poem-line">谁家新燕啄春泥。</div>
+                    </div>
+                </div>
+
+                <!-- 诗词4 -->
+                <div class="poem-card">
+                    <div class="poem-title">《六月二十七日望湖楼醉书》</div>
+                    <div class="poem-author">【宋】苏轼</div>
+                    <div class="poem-content">
+                        <div class="poem-line">黑云翻墨未遮山，</div>
+                        <div class="poem-line">白雨跳珠乱入船。</div>
+                        <div class="poem-line">卷地风来忽吹散，</div>
+                        <div class="poem-line"><span class="poem-highlight">望湖楼下水如天。</span></div>
+                    </div>
+                </div>
+
+                <!-- 诗词5 -->
+                <div class="poem-card">
+                    <div class="poem-title">《与钱员外题绝句》</div>
+                    <div class="poem-author">【唐】白居易</div>
+                    <div class="poem-content">
+                        <div class="poem-line">孤山寺里一枝梅，</div>
+                        <div class="poem-line">为问春风何处开？</div>
+                        <div class="poem-line">唯有游人如见惯，</div>
+                        <div class="poem-line">年年春色为谁来。</div>
+                    </div>
+                </div>
+
+                <!-- 诗词6 -->
+                <div class="poem-card">
+                    <div class="poem-title">《宿甘露寺僧舍》</div>
+                    <div class="poem-author">【宋】陆游</div>
+                    <div class="poem-content">
+                        <div class="poem-line">楼台侧畔扬花雨，</div>
+                        <div class="poem-line">湖面中央荷叶风。</div>
+                        <div class="poem-line">一自坡公题咏后，</div>
+                        <div class="poem-line"><span class="poem-highlight">西湖山水属南公。</span></div>
+                    </div>
+                </div>
+
+                <!-- 诗词7 -->
+                <div class="poem-card">
+                    <div class="poem-title">《西湖》</div>
+                    <div class="poem-author">【宋】王安石</div>
+                    <div class="poem-content">
+                        <div class="poem-line">六朝旧事随流水，</div>
+                        <div class="poem-line">但寒烟衰草凝绿。</div>
+                        <div class="poem-line">至今商女，</div>
+                        <div class="poem-line">时时犹唱，后庭遗曲。</div>
+                    </div>
+                </div>
+
+                <!-- 诗词8 -->
+                <div class="poem-card">
+                    <div class="poem-title">《望江南·超然台作》</div>
+                    <div class="poem-author">【宋】苏轼</div>
+                    <div class="poem-content">
+                        <div class="poem-line">春未老，风细柳斜斜。</div>
+                        <div class="poem-line">试上超然台上看，</div>
+                        <div class="poem-line">半壕春水一城花。</div>
+                        <div class="poem-line"><span class="poem-highlight">烟雨暗千家。</span></div>
+                    </div>
+                </div>
+
+                <!-- 诗词9 -->
+                <div class="poem-card">
+                    <div class="poem-title">《忆江南·其一》</div>
+                    <div class="poem-author">【唐】白居易</div>
+                    <div class="poem-content">
+                        <div class="poem-line">江南好，风景旧曾谙。</div>
+                        <div class="poem-line">日出江花红胜火，</div>
+                        <div class="poem-line">春来江水绿如蓝。</div>
+                        <div class="poem-line"><span class="poem-highlight">能不忆江南？</span></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="td-card" id="day-3">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 3：2月21日（周五）灵隐寺祈福+西溪湿地 · 农历正月初五（迎财神日）</span>
+            </div>
+            <div class="td-message td-message-warning">
+                <i class="t-icon t-icon-calendar"></i>
+                <strong>正月初五"迎财神"</strong>：灵隐寺香火极旺，建议早上7点前到达避开人流高峰
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">美食推荐 / 备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>06:30-07:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <i class="t-icon t-icon-car"></i> 酒店出发前往灵隐寺
+                            </div>
+                            <div style="color: var(--td-text-color-secondary); font-size: 13px;">
+                                <i class="t-icon t-icon-time"></i> 车程20分钟
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 停车：灵隐景区停车场（15元/次）
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>07:00-10:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-temple-heaven"></i> 灵隐寺祈福</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">飞来峰造像</span>
+                                <span class="td-tag td-tag-success">大雄宝殿</span>
+                                <span class="td-tag td-tag-warning">三生石</span>
+                            </div>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                💰 门票：飞来峰45元 + 灵隐寺30元 = 75元/人
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-edit"></i> 提前1天"杭州本地宝"预约<br>
+                                <i class="t-icon t-icon-error-circle"></i> 寺内禁止拍照<br>
+                                <i class="t-icon t-icon-error-circle"></i> 香火券20元起（可自愿）
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>10:30-12:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 素斋体验：灵隐寺斋堂 或 香积寺素食</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">罗汉斋</span>
+                                <span class="td-tag td-tag-success">素烧鹅</span>
+                                <span class="td-tag td-tag-warning">菌菇汤</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">人均60元</span>
+                            <div style="margin-top: 8px; font-size: 13px;">
+                                <i class="t-icon t-icon-time"></i> 午餐11:00-13:00
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>12:30-13:00</strong></td>
+                        <td>
+                            <i class="t-icon t-icon-car"></i> 自驾返回西溪湿地（车程15分钟）
+                        </td>
+                        <td>
+                            <span class="td-tag td-tag-primary">回酒店稍作休息</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>14:00-17:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-tree"></i> 西溪湿地国家公园</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">摇橹船</span>
+                                <span class="td-tag td-tag-success">烟水渔庄</span>
+                                <span class="td-tag td-tag-warning">深潭口</span>
+                            </div>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                💰 门票：80元/人 | 电瓶船60元/人 | 摇橹船100元/船（可坐6人）
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-edit"></i> 建议体验摇橹船，更有江南水乡韵味<br>
+                                <i class="t-icon t-icon-error-circle"></i> 冬季日落早（17:30），注意游览时间
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>18:00-19:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 晚餐：绿茶餐厅（西溪印象城店）</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">🐟 面包诱惑</span>
+                                <span class="td-tag td-tag-success">🐟 烤鱼</span>
+                                <span class="td-tag td-tag-warning">🥗 石锅拌饭</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">人均100元</span>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                <i class="t-icon t-icon-calendar"></i> 春节需排队，提前美团取号
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>晚上</strong></td>
+                        <td>
+                            回酒店休息，整理行李准备次日前往上海
+                        </td>
+                        <td>
+                            <div class="td-message td-message-success">
+                                <i class="t-icon t-icon-check-circle"></i> 杭州行程结束
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 灵隐寺历史文化 -->
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(2)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">灵隐寺历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-2" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(2);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-2" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-2"></i>
+                </div>
+            </div>
+            <div class="history-collapsible-content" id="history-content-2">
+                <!-- 一、灵隐寺创建与发展 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        灵隐寺创建与发展
+                    </h3>
+                    <p><strong>东晋创建</strong>：灵隐寺始建于东晋咸和元年（326年），由印度僧人慧理创建。《灵隐寺志》载："山门对灵峰，天外有飞来。"慧理和尚见飞来峰奇秀，认定是"仙灵所隐"之地，遂建寺取名"灵隐"。</p>
+                    <p><strong>历代兴衰</strong>：灵隐寺在历史上曾多次毁建。唐代会昌年间因灭佛运动被毁，五代吴越国时重建，宋代达到鼎盛，有"东南第一山"之称。明清时期又多次重建，现存建筑多为清代所建。</p>
+                    <p><strong>现代复兴</strong>：1949年后，灵隐寺得到政府保护和修复，1987年赵朴初会长主持重修，逐渐恢复昔日规模。如今灵隐寺是中国佛教禅宗十刹之一，年接待游客超千万人次。</p>
+                </div>
+
+                <!-- 二、飞来峰与摩崖石刻 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-1"></i>
+                        飞来峰与摩崖石刻
+                    </h3>
+                    <p><strong>飞来峰传说</strong>：相传东晋时印度僧人慧理见此山峰奇秀，惊叹："此乃中天竺国灵鹫山之小岭，不知何以飞来？"故名飞来峰。峰高168米，古树参天，岩石突兀，是西湖群山中最古老的山峰。</p>
+                    <p><strong>摩崖石刻瑰宝</strong>：飞来峰上有五代至宋代的470多尊摩崖石刻造像，是中国南方石窟艺术的瑰宝。其中最著名的是弥勒佛造像（大肚弥勒），为元代作品，高9.9米，笑容可掬，是飞来峰石刻的代表作。</p>
+                    <p><strong>文物保护</strong>：1982年，飞来峰石刻被列为第二批全国重点文物保护单位。这些石刻造像题材丰富，包括佛像、菩萨像、罗汉像等，反映了中国古代石刻艺术的高超水平。</p>
+                </div>
+
+                <!-- 三、济公传说与文化影响 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-user"></i>
+                        济公传说与文化影响
+                    </h3>
+                    <p><strong>济公生平</strong>：济公（1130-1209），法名道济，俗名李修缘，南宋时期浙江天台人。他在灵隐寺出家，后到净慈寺修行，是中国历史上著名的"活佛"。</p>
+                    <p><strong>民间传说</strong>：济公和尚"酒肉穿肠过，佛祖心中留"的形象深入人心，民间流传着许多他扶危济困、惩恶扬善的故事。寺内至今保存有济公殿，供奉济公像。</p>
+                    <p><strong>文化影响</strong>：济公传说被改编为小说、戏曲、电视剧等多种艺术形式，如清代小说《济公传》、电视剧《济公》等，成为中国传统文化的重要组成部分。济公的"济世救民"精神影响深远。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《灵隐寺志》《西湖游览志》《济公传》等</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="td-divider"></div>
+
+        <!-- Day 4 -->
+        <div class="td-card" id="day-4">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 4：2月22日（周六）杭州午饭后→上海，豫园灯会 · 农历正月初六（送穷日）</span>
+            </div>
+            <div class="td-message td-message-info">
+                <i class="t-icon t-icon-car"></i>
+                <strong>自驾路线</strong>：杭州 → 沪杭高速(G60) → 上海，全程约180公里，预计2.5小时
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">美食推荐 / 备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>08:00-10:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 杭州特色早餐+河坊街早游</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">杭州小笼包</span>
+                                <span class="td-tag td-tag-success">河坊街晨景</span>
+                                <span class="td-tag td-tag-warning">南宋御街</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 推荐：知味观（河坊街店）或 新丰小吃<br>
+                                <i class="t-icon t-icon-time"></i> 早餐时间：06:30-10:00<br>
+                                <i class="t-icon t-icon-edit"></i> 早上去河坊街人少，适合拍照
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>10:00-12:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-building-1"></i> 河坊街+南宋御街深度游览</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">胡庆余堂</span>
+                                <span class="td-tag td-tag-success">吴山广场</span>
+                                <span class="td-tag td-tag-warning">南宋御街</span>
+                                <span class="td-tag td-tag-primary">杭州博物馆</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 特色店铺：张小泉剪刀、王星记扇子、方回春堂<br>
+                                <i class="t-icon t-icon-edit"></i> 杭州博物馆免费开放，凭身份证进入<br>
+                                <i class="t-icon t-icon-time"></i> 建议游览顺序：河坊街 → 吴山广场 → 南宋御街 → 杭州博物馆
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>12:00-13:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 河坊街附近特色午餐</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">西湖醋鱼</span>
+                                <span class="td-tag td-tag-success">龙井虾仁</span>
+                                <span class="td-tag td-tag-warning">叫花鸡</span>
+                                <span class="td-tag td-tag-primary">东坡肉</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">人均100元</span>
+                            <div style="margin-top: 8px; font-size: 13px;">
+                                <i class="t-icon t-icon-shop"></i> 推荐：楼外楼（孤山店）或 新白鹿餐厅（西湖文化广场店）<br>
+                                <i class="t-icon t-icon-time"></i> 建议提前预约<br>
+                                <i class="t-icon t-icon-edit"></i> 距离河坊街较近，方便午饭后直接出发
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>13:30-16:00</strong></td>
+                        <td>
+                            <i class="t-icon t-icon-car"></i> 自驾杭州→上海，沿途服务区休息
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i> 春节期间高速可能拥堵，预留充足时间<br>
+                                <i class="t-icon t-icon-shop"></i> 推荐：嘉兴服务区（中途休息，有嘉兴粽子）
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>16:00-17:00</strong></td>
+                        <td>
+                            抵达上海酒店（建议选择人民广场/南京路商圈），办理入住
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-shop"></i> 停车：酒店地下停车场或周边公共停车场<br>
+                                <i class="t-icon t-icon-time"></i> 办理入住后稍作休息
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>17:00-19:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-gift"></i> 豫园+老城隍庙+九曲桥</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-primary">豫园古典园林</span>
+                                <span class="td-tag td-tag-success">城隍庙祈福</span>
+                                <span class="td-tag td-tag-warning">商城购物</span>
+                            </div>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                💰 豫园门票：30元/人（旺季40元）
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-edit"></i> "上海豫园"公众号预约<br>
+                                <i class="t-icon t-icon-error-circle"></i> 边逛边吃：梨膏糖、五香豆、酒酿圆子
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-warning-color-light);">
+                        <td><strong>18:00-21:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-warning-color);"><i class="t-icon t-icon-star"></i> 豫园新春灯会（重点推荐！）</strong>
+                            </div>
+                            <div style="font-size: 13px;">
+                                🏮 龙年主题彩灯 | 🎊 非遗表演 | 🎭 传统戏曲
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-error">
+                                <i class="t-icon t-icon-error-circle"></i> <strong>人流超多！</strong><br>
+                                建议18:00前进入（天黑前）<br>
+                                注意保管财物，照看孩子
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>19:00-20:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 上海晚餐：绿波廊（豫园店）或 沈大成（南京东路店）</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">🐟 本帮菜</span>
+                                <span class="td-tag td-tag-success">🥟 生煎包</span>
+                                <span class="td-tag td-tag-warning">🍜 浓油赤酱</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <span class="td-badge">绿波廊 人均200元</span>
+                                <span class="td-badge">沈大成 人均50元</span><br>
+                                <i class="t-icon t-icon-time"></i> 建议错峰用餐或外卖
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 豫园历史文化 -->
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(3)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">豫园历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-3" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(3);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-3" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-3"></i>
+                </div>
+            </div>
+            <div class="history-collapsible-content" id="history-content-3">
+                <!-- 一、豫园创建与历史演变 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        豫园创建与历史演变
+                    </h3>
+                    <p><strong>明代始建</strong>：豫园始建于明嘉靖三十八年（1559年），由明代官员潘允端为孝敬父母而建，取"豫悦老亲"之意。潘允端是明嘉靖年间进士，曾任刑部主事、四川布政司参议等职。</p>
+                    <p><strong>清代盛衰</strong>：豫园在清代曾多次易主，乾隆二十五年（1760年），当地士绅集资购得豫园，将其改为城隍庙的西园，成为上海士绅的活动场所。鸦片战争后，豫园曾遭破坏，部分建筑被毁。</p>
+                    <p><strong>现代修复</strong>：1956年，豫园开始大规模修复，1961年被列为上海市文物保护单位，1982年被列为全国重点文物保护单位。如今的豫园占地约2万平方米，是江南古典园林的杰出代表。</p>
+                </div>
+
+                <!-- 二、豫园园林艺术特色 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-1"></i>
+                        豫园园林艺术特色
+                    </h3>
+                    <p><strong>江南园林代表</strong>：豫园与苏州拙政园、留园、狮子林并称江南四大名园，以小巧玲珑、精雕细刻著称。园内有48处景点，包括大假山、玉玲珑、万花楼、点春堂等。</p>
+                    <p><strong>玉玲珑</strong>：豫园镇园之宝，是一块高3.3米、宽1.5米、厚0.8米的太湖石，与苏州留园的冠云峰、杭州西湖的绉云峰并称"江南三大名石"。玉玲珑具有"漏、透、瘦、皱"的特点，据说在石下烧一炉香，烟雾会从石孔中袅袅升起。</p>
+                    <p><strong>点春堂</strong>：豫园主要建筑之一，始建于清道光初年，是清代小刀会起义的指挥所。堂内陈列着小刀会起义的历史文物，是上海重要的革命纪念地。</p>
+                </div>
+
+                <!-- 三、豫园灯会与民俗文化 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-gift"></i>
+                        豫园灯会与民俗文化
+                    </h3>
+                    <p><strong>豫园灯会</strong>：始于1995年，每年春节举办，已成为上海标志性民俗活动。灯会融合传统彩灯工艺与现代科技，以生肖为主题，每年吸引游客超500万人次，是全国最大规模的新春灯会之一。</p>
+                    <p><strong>老城隍庙</strong>：上海三大庙宇之一，供奉的是明代名臣秦裕伯（后改为霍光）。老上海人有"不到城隍庙，等于没到过上海"的说法。城隍庙地区集宗教、文化、商业于一体，是上海传统文化的重要窗口。</p>
+                    <p><strong>豫园商城</strong>：依托豫园和城隍庙发展起来的商业街区，出售各种上海特色商品，如南翔小笼包、梨膏糖、五香豆等，是游客购买上海特产的好去处。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《上海地方志》《豫园志》《城隍庙志》等</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="td-divider"></div>
+
+        <!-- Day 5 -->
+        <div class="td-card" id="day-5">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 5：2月23日（周日）外滩+南京路购物 · 农历正月初七</span>
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">美食推荐 / 备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>09:00-10:00</strong></td>
+                        <td>
+                            酒店早餐后出发，<strong>地铁前往外滩</strong>（建议不开车，市区停车难）
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-location"></i> 地铁2号线/10号线"南京东路站"
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>10:00-12:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-building-2"></i> 外滩万国建筑博览群</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
+                                <span class="td-tag td-tag-primary">和平饭店</span>
+                                <span class="td-tag td-tag-success">外白渡桥</span>
+                                <span class="td-tag td-tag-warning">外滩源</span>
+                                <span class="td-tag td-tag-primary">浦东陆家嘴天际线</span>
+                            </div>
+                            <div style="font-size: 13px; color: var(--td-text-color-secondary);">
+                                📸 最佳拍照点：十六铺码头、外滩18号天台
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i> 外滩免费开放<br>
+                                <i class="t-icon t-icon-error-circle"></i> 春节人多，注意财物<br>
+                                <i class="t-icon t-icon-camera"></i> 上午顺光拍照效果好
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>12:00-13:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 午餐：老正兴菜馆（福州路店）或 新荣记（外滩店）</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">🐟 红烧划水</span>
+                                <span class="td-tag td-tag-success">🦐 油爆虾</span>
+                                <span class="td-tag td-tag-warning">🥗 八宝辣酱</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">老正兴 人均180元</span><br>
+                            <span class="td-badge">新荣记 人均500元</span>
+                            <div style="margin-top: 8px; font-size: 13px;">
+                                <i class="t-icon t-icon-calendar"></i> 提前3天预约
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>14:00-17:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-shop"></i> 南京路步行街购物</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
+                                <span class="td-tag td-tag-primary">第一百货</span>
+                                <span class="td-tag td-tag-success">永安百货</span>
+                                <span class="td-tag td-tag-warning">新世界</span>
+                                <span class="td-tag td-tag-primary">来福士</span>
+                            </div>
+                            <div style="margin-top: 8px; padding: 10px; background: var(--td-brand-color-light-9); border-radius: 6px;">
+                                <strong>特色店铺推荐：</strong><br>
+                                • <span class="history-highlight">泰康食品</span>：老上海特产（蝴蝶酥、鲜肉月饼）<br>
+                                • <span class="history-highlight">第一食品</span>：大白兔奶糖、梨膏糖<br>
+                                • <span class="history-highlight">永安百货</span>：老字号国货美妆<br>
+                                • <span class="history-highlight">新雅粤菜馆</span>：鲜肉月饼（外带）
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-success">
+                                <strong>伴手礼清单：</strong><br>
+                                <i class="t-icon t-icon-check-circle"></i> 大白兔奶糖<br>
+                                <i class="t-icon t-icon-check-circle"></i> 蝴蝶酥（泰康）<br>
+                                <i class="t-icon t-icon-check-circle"></i> 梨膏糖<br>
+                                <i class="t-icon t-icon-check-circle"></i> 鲜肉月饼（现买）<br>
+                                <i class="t-icon t-icon-check-circle"></i> 上海家化护肤品
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>17:00-18:00</strong></td>
+                        <td>
+                            <strong><i class="t-icon t-icon-walk"></i> 福州路文化街</strong>（上海书城、古籍书店）
+                        </td>
+                        <td>
+                            <span class="td-tag td-tag-primary">适合文艺青年</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>18:00-19:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 晚餐：鲜得来（南京东路店）或 小杨生煎</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">🥟 排骨年糕</span>
+                                <span class="td-tag td-tag-success">🥟 生煎包</span>
+                                <span class="td-tag td-tag-warning">🍜 葱油拌面</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">人均50元</span>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                <i class="t-icon t-icon-time"></i> 快餐式，翻台快
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>19:30-21:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-play-circle"></i> 外滩夜景+灯光秀</strong>
+                            </div>
+                            <div style="font-size: 13px;">
+                                ⏰ 灯光秀时间：19:00-22:00（整点、半点各一场）
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-camera"></i> 最佳观赏点：外滩1-3号观景台<br>
+                                <i class="t-icon t-icon-error-circle"></i> 或乘坐浦江游船（100元/人）
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 外滩历史文化 -->
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(4)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">外滩历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-4" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(4);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-4" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-4"></i>
+                </div>
+            </div>
+            <div class="history-collapsible-content" id="history-content-4">
+                <!-- 一、外滩的形成与发展 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        外滩的形成与发展
+                    </h3>
+                    <p><strong>历史沿革</strong>：外滩原名黄浦滩，因位于黄浦江滩地而得名。1843年上海开埠后，外滩成为西方列强在上海的租界区，逐渐发展成为中国乃至远东的金融中心。</p>
+                    <p><strong>万国建筑群</strong>：外滩全长1.5公里，拥有52幢不同风格的建筑，被誉为"万国建筑博览群"。这些建筑建于1920-1930年代，涵盖哥特式、罗马式、巴洛克式、装饰艺术派、中西合璧式等多种风格。</p>
+                    <p><strong>金融中心</strong>：外滩曾是中国金融业的中心，聚集了汇丰银行、中国银行、花旗银行等众多金融机构，有"东方华尔街"之称。如今，外滩仍是上海的金融中心之一。</p>
+                </div>
+
+                <!-- 二、外滩标志性建筑 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-building-2"></i>
+                        外滩标志性建筑
+                    </h3>
+                    <p><strong>和平饭店</strong>：建于1929年，原名华懋饭店，由犹太富商沙逊所建，装饰艺术派风格。曾接待过卓别林、马歇尔、尼克松等名人。1楼爵士酒吧的老年爵士乐队享誉世界，成立于1980年，是中国最古老的爵士乐队之一。</p>
+                    <p><strong>汇丰银行大楼</strong>：建于1923年，新古典主义风格，曾是远东最大的银行建筑。大楼顶部有两座铜狮，是汇丰银行的标志，现收藏于上海银行博物馆。</p>
+                    <p><strong>海关大楼</strong>：建于1927年，哥特式风格，楼顶的钟楼是外滩的标志性景观。钟楼内的大钟是英国制造的，与伦敦大本钟出自同一厂家，每小时敲响一次，声音可传数公里。</p>
+                    <p><strong>外白渡桥</strong>：中国第一座全钢结构桥梁，建于1907年，是老上海的标志。桥名"外白渡"意为"外国人不收费过桥"。电影《情深深雨蒙蒙》中的依萍跳桥场景就在此拍摄。</p>
+                </div>
+
+                <!-- 三、外滩的文化意义 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-book"></i>
+                        外滩的文化意义
+                    </h3>
+                    <p><strong>近代中国的缩影</strong>：外滩见证了上海开埠以来的历史变迁，是近代中国半殖民地半封建社会的缩影，也是中国走向现代化的见证。</p>
+                    <p><strong>上海的名片</strong>：外滩是上海最著名的旅游景点之一，每年吸引数百万游客前来参观。外滩的夜景尤为著名，与浦东陆家嘴的摩天大楼相映成趣，被誉为"世界十大夜景之一"。</p>
+                    <p><strong>文化遗产</strong>：2017年，外滩历史文化风貌区被列为中国历史文化街区。外滩的建筑、街道、景观等都是上海重要的文化遗产，承载着丰富的历史记忆。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《上海租界志》《外滩建筑志》《上海近代建筑史》等</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="td-divider"></div>
+
+        <!-- Day 6 -->
+        <div class="td-card" id="day-6">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 6：2月24日（周一）上海迪士尼 · 农历正月初八</span>
+            </div>
+            <div class="td-message td-message-error">
+                <i class="t-icon t-icon-error-circle"></i>
+                <strong>超级重要！</strong> 迪士尼必须提前7-14天购票（春节期间需提前更久），现场基本无票！
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">攻略 / 备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>07:00-07:30</strong></td>
+                        <td>
+                            酒店早餐后出发
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-fork-knife"></i> 建议自备早餐，园内早餐贵且排队
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>07:30-08:30</strong></td>
+                        <td>
+                            <i class="t-icon t-icon-car"></i> 自驾前往迪士尼（车程约1小时）
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-shop"></i> 停车：P1/P2停车场（100元/天）<br>
+                                <i class="t-icon t-icon-error-circle"></i> 建议7:30前到达，提前排队安检
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>08:30-21:00</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-castle"></i> 上海迪士尼乐园全日游</strong>
+                            </div>
+                            <div style="margin-bottom: 12px; padding: 12px; background: var(--td-brand-color-light-9); border-radius: 6px;">
+                                <strong style="color: var(--td-brand-color);">🎯 必玩项目攻略（按优先级）：</strong>
+                                <div style="margin-top: 8px; line-height: 2;">
+                                    <div><span class="td-tag td-tag-error">1. 创极速光轮</span> <small>（开园冲刺或买闪电通道）</small></div>
+                                    <div><span class="td-tag td-tag-error">2. 飞越地平线</span> <small>（开园第二站）</small></div>
+                                    <div><span class="td-tag td-tag-warning">3. 七个小矮人矿山车</span> <small>（中午或傍晚）</small></div>
+                                    <div><span class="td-tag td-tag-warning">4. 雷鸣山漂流</span> <small>（春节不冷可玩）</small></div>
+                                    <div><span class="td-tag td-tag-primary">5. 加勒比海盗</span></div>
+                                    <div><span class="td-tag td-tag-primary">6. 小飞侠天空奇遇</span></div>
+                                    <div><span class="td-tag td-tag-success">7. 旋转疯蜜罐（适合孩子）</span></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 12px; padding: 12px; background: var(--td-success-color-light); border-radius: 6px;">
+                                <strong style="color: var(--td-success-color);">🎭 演出时间（必看）：</strong>
+                                <div style="margin-top: 8px; line-height: 2;">
+                                    <div>• <strong>城堡秀</strong>：13:00 / 15:30（时间可能调整，以官方为准）</div>
+                                    <div>• <strong>夜光幻影秀</strong>：20:00（重点推荐！）</div>
+                                    <div>• <strong>烟花秀</strong>：20:30（春节特别版）</div>
+                                </div>
+                            </div>
+                            <div style="font-size: 13px; color: var(--td-text-color-secondary);">
+                                💰 门票：标准票719元/人 | 尊享卡2099元/人（免排队）
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-error">
+                                <strong>核心攻略：</strong><br>
+                                <i class="t-icon t-icon-check-circle"></i> 下载"上海迪士尼度假区"APP<br>
+                                <i class="t-icon t-icon-check-circle"></i> 开园前30分钟到安检口<br>
+                                <i class="t-icon t-icon-check-circle"></i> 开园冲刺"探险岛"<br>
+                                <i class="t-icon t-icon-check-circle"></i> 利用APP实时查看等候时间<br>
+                                <i class="t-icon t-icon-check-circle"></i> 午餐避开12-13点高峰<br>
+                                <i class="t-icon t-icon-check-circle"></i> 19:30前占烟花观看位（城堡前）
+                            </div>
+                            <div class="td-message td-message-warning" style="margin-top: 12px;">
+                                <strong>带娃必备：</strong><br>
+                                • 婴儿车（可租赁）<br>
+                                • 保温杯（园内可接热水）<br>
+                                • 零食（可带未开封食品）<br>
+                                • 充电宝<br>
+                                • 创可贴
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>餐饮建议</strong></td>
+                        <td>
+                            <strong>午餐</strong>：皮诺丘乡村厨房（套餐100元/人）<br>
+                            <strong>晚餐</strong>：漫月轩（中式套餐150元/人）或园外觅食
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-fork-knife"></i> 可带面包、水果等食物入园<br>
+                                <i class="t-icon t-icon-error-circle"></i> 园内正餐人均100-200元
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>21:00-22:30</strong></td>
+                        <td>
+                            烟花秀结束后返回酒店休息
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i> 闭园后停车场极拥堵，建议提前15分钟离园或等人流散去
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 迪士尼小贴士 -->
+        <div class="history-card">
+            <div class="history-card-title">
+                <i class="t-icon t-icon-lightbulb"></i>
+                迪士尼省钱省时攻略
+            </div>
+            <p><strong>省钱技巧</strong>：①官方APP提前购票比现场便宜50元；②自带食物（面包、水果、零食）可省数百元；③提前研究地图规划路线，避免走回头路浪费时间。</p>
+            <p><strong>省时技巧</strong>：①下载APP实时查看项目等候时间；②利用"单人通道"（部分项目）可大幅缩短等候；③午餐11:00前或14:00后用餐避开高峰；④热门项目选择早上或傍晚游玩。</p>
+            <p><strong>拍照机位</strong>：①城堡正前方（奇想花园）最经典；②米奇大街入口处拍城堡全景；③宝藏湾海盗船前适合拍大片；④夜光幻影秀建议提前1小时占位城堡前。</p>
+        </div>
+
+        <div class="td-divider"></div>
+
+        <!-- Day 7 -->
+        <div class="td-card" id="day-7">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-flag"></i>
+                <span class="td-card-title">Day 7：2月25日（周二）东方明珠+陆家嘴，返程 · 农历正月初九</span>
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">时间段</th>
+                        <th style="width: 50%;">行程安排</th>
+                        <th style="width: 30%;">美食推荐 / 备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>08:30-09:30</strong></td>
+                        <td>
+                            酒店早餐后退房，<strong>地铁前往陆家嘴</strong>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-location"></i> 地铁2号线"陆家嘴站"
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>09:30-11:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: var(--td-brand-color);"><i class="t-icon t-icon-tower-clock"></i> 东方明珠广播电视塔</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
+                                <span class="td-tag td-tag-primary">太空舱（350米）</span>
+                                <span class="td-tag td-tag-success">观光层（263米）</span>
+                                <span class="td-tag td-tag-warning">玻璃栈道</span>
+                            </div>
+                            <div style="font-size: 13px; color: var(--td-text-color-secondary);">
+                                💰 门票：观光层180元 | 太空舱220元（建议网购便宜30元）
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-edit"></i> 提前1天"东方明珠"公众号预约<br>
+                                <i class="t-icon t-icon-error-circle"></i> 9:00开馆，建议9:30前到避开人流<br>
+                                <i class="t-icon t-icon-camera"></i> 上午顺光拍照
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>11:30-12:00</strong></td>
+                        <td>
+                            <strong><i class="t-icon t-icon-walk"></i> 陆家嘴中心绿地</strong>（拍摄上海三件套：东方明珠+金茂大厦+环球金融中心）
+                        </td>
+                        <td>
+                            <div class="td-message td-message-success">
+                                <i class="t-icon t-icon-camera"></i> 最佳拍照点：绿地中心喷泉处
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>12:00-13:30</strong></td>
+                        <td>
+                            <div style="margin-bottom: 8px;">
+                                <strong><i class="t-icon t-icon-fork-knife"></i> 午餐：鼎泰丰（国金中心店）或 晶品（上海中心）</strong>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                <span class="td-tag td-tag-error">🥟 小笼包</span>
+                                <span class="td-tag td-tag-success">🍜 牛肉面</span>
+                                <span class="td-tag td-tag-warning">🥗 炒饭</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="td-badge">鼎泰丰 人均150元</span><br>
+                            <span class="td-badge">晶品 人均300元</span>
+                            <div style="margin-top: 8px; font-size: 13px;">
+                                <i class="t-icon t-icon-calendar"></i> 午餐高峰排队1小时+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>13:30-15:00</strong></td>
+                        <td>
+                            <strong><i class="t-icon t-icon-shop"></i> 陆家嘴购物</strong>（国金中心IFC / 正大广场）或<br>
+                            <strong><i class="t-icon t-icon-building-1"></i> 上海中心大厦观光厅</strong>（546米，中国第一高楼观景台）
+                        </td>
+                        <td>
+                            <div class="td-message td-message-info">
+                                <i class="t-icon t-icon-edit"></i> 上海中心门票：180元<br>
+                                <i class="t-icon t-icon-time"></i> 若时间紧张可跳过
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="background: var(--td-warning-color-light);">
+                        <td><strong>15:00-15:30</strong></td>
+                        <td>
+                            <strong>返回酒店取车，准备返程</strong>
+                        </td>
+                        <td>
+                            <div class="td-message td-message-warning">
+                                <i class="t-icon t-icon-error-circle"></i> 检查行李、车辆<br>
+                                <i class="t-icon t-icon-error-circle"></i> 提前规划返程路线
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>15:30-21:00</strong></td>
+                        <td>
+                            <i class="t-icon t-icon-car"></i> <strong>自驾返回张家口</strong>（约1200公里，预计14-16小时）
+                        </td>
+                        <td>
+                            <div class="td-message td-message-error">
+                                <strong>长途驾驶安全提示：</strong><br>
+                                <i class="t-icon t-icon-check-circle"></i> 每2小时休息15分钟<br>
+                                <i class="t-icon t-icon-check-circle"></i> 轮流驾驶，避免疲劳<br>
+                                <i class="t-icon t-icon-check-circle"></i> 备好零食、水、导航<br>
+                                <i class="t-icon t-icon-check-circle"></i> 关注路况，避开拥堵<br>
+                                <i class="t-icon t-icon-check-circle"></i> 建议中途住宿（济南/石家庄）
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="td-message td-message-success" style="margin-top: 16px;">
+                <i class="t-icon t-icon-check-circle"></i>
+                <strong>推荐中途住宿城市</strong>：若15:30出发，预计晚上23:00到达济南附近，建议在济南或德州住宿，次日继续返回张家口（剩余约600公里，6小时车程）
+            </div>
+        </div>
+
+        <!-- 陆家嘴历史文化 -->
+        <div class="history-collapsible">
+            <div class="history-collapsible-header" onclick="toggleHistorySection(5)">
+                <div class="history-collapsible-title">
+                    <i class="t-icon t-icon-book history-collapsible-icon"></i>
+                    <span class="history-collapsible-toggle-text">陆家嘴历史文化</span>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="tts-button-5" class="t-button t-button--primary t-button--medium" onclick="event.stopPropagation(); speakHistoryText(5);">
+                            <i class="t-icon t-icon-play-circle"></i>
+                            <span class="t-button__text">朗读</span>
+                        </button>
+                        <span id="tts-status-5" class="tts-status-indicator"></span>
+                    </div>
+                    <i class="t-icon t-icon-chevron-down history-collapsible-icon" id="history-icon-5"></i>
+                </div>
+            </div>
+            <div class="history-collapsible-content" id="history-content-5">
+                <!-- 一、陆家嘴名称由来与历史变迁 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-time"></i>
+                        陆家嘴名称由来与历史变迁
+                    </h3>
+                    <p><strong>名称由来</strong>：明代永乐年间，江苏苏州陆氏家族在此开垦土地，形成一块凸入黄浦江的滩地，故名"陆家嘴"。陆氏家族是明代上海的名门望族，其中最著名的是陆深，明代文学家、书法家。</p>
+                    <p><strong>近代变迁</strong>：近代以来，陆家嘴一直是上海的重要码头和工业区。1949年后，陆家嘴成为上海的工业基地，聚集了许多工厂和仓库。</p>
+                    <p><strong>现代崛起</strong>：1990年，中国政府宣布开发开放浦东，陆家嘴被规划为金融贸易区。经过30多年的发展，陆家嘴已成为中国最重要的金融中心之一，与纽约曼哈顿、香港中环、伦敦金融城齐名。</p>
+                </div>
+
+                <!-- 二、陆家嘴标志性建筑 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-tower-clock"></i>
+                        陆家嘴标志性建筑
+                    </h3>
+                    <p><strong>东方明珠</strong>：1994年建成，高468米，曾是亚洲第一、世界第三高塔。设计灵感来自唐诗"大珠小珠落玉盘"，由11个大小不一的球体组成，是上海的标志性建筑。塔内设有观光层、旋转餐厅、上海城市历史发展陈列馆等。</p>
+                    <p><strong>上海中心大厦</strong>：2016年建成，高632米，是中国第一、世界第二高楼（仅次于迪拜哈利法塔）。建筑采用旋转式设计，每层旋转1度，具有"东方之冠"的美誉。大厦内设有办公区、酒店、观光层等，观光层位于118层，高度546米。</p>
+                    <p><strong>金茂大厦</strong>：1999年建成，高420.5米，曾是中国第一高楼。建筑设计灵感来自中国传统的塔形建筑，共有88层，是集办公、酒店、观光为一体的综合性建筑。88层观光厅是上海著名的观光景点之一。</p>
+                    <p><strong>环球金融中心</strong>：2008年建成，高492米，是世界最高的平顶式建筑。建筑外形像一把"军刀"，顶部有一个方形孔洞，是观光厅的入口。观光厅位于94-100层，其中100层观光天阁是世界最高的观光设施之一。</p>
+                </div>
+
+                <!-- 三、陆家嘴的金融地位与文化意义 -->
+                <div class="history-section">
+                    <h3 style="font-size: 18px; font-weight: 600; color: #8B4513; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="t-icon t-icon-money-circle"></i>
+                        陆家嘴的金融地位与文化意义
+                    </h3>
+                    <p><strong>金融中心</strong>：陆家嘴是中国最重要的金融中心，聚集了中国人民银行上海总部、上海证券交易所、上海期货交易所等金融机构，以及汇丰银行、花旗银行等众多外资银行的中国总部。</p>
+                    <p><strong>经济贡献</strong>：陆家嘴金融贸易区的经济总量占上海市的10%以上，是上海经济的重要增长点。2023年，陆家嘴金融贸易区的GDP超过5000亿元。</p>
+                    <p><strong>文化意义</strong>：陆家嘴的摩天大楼群是上海现代化的象征，代表了中国改革开放的成就。陆家嘴的夜景与外滩的万国建筑群交相辉映，成为上海最著名的景观之一，每年吸引数百万游客前来参观。</p>
+                </div>
+
+                <!-- 引用来源 -->
+                <div style="margin-top: 32px; padding: 16px; background: #F2F5FC; border-left: 3px solid #8B4513; border-radius: 6px;">
+                    <p style="margin: 0; font-size: 13px; color: #5A5A5A;"><strong>主要史料来源</strong>：《浦东开发开放志》《陆家嘴金融贸易区志》《上海城市建设史》等</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="td-divider"></div>
+
+        <!-- 费用预算 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-money-circle"></i>
+                <span class="td-card-title">费用预算（3人家庭预估）</span>
+            </div>
+            <table class="td-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">项目</th>
+                        <th style="width: 40%;">明细</th>
+                        <th style="width: 30%;">预算</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>交通费用</strong></td>
+                        <td>
+                            高速过路费（往返）+ 油费<br>
+                            <small style="color: var(--td-text-color-secondary);">张家口↔杭州↔上海 约2800公里</small>
+                        </td>
+                        <td><span class="td-badge">约2500元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>住宿费用</strong></td>
+                        <td>
+                            6晚住宿（杭州3晚 + 上海3晚）<br>
+                            <small style="color: var(--td-text-color-secondary);">春节期间，4星酒店约500-800元/晚</small>
+                        </td>
+                        <td><span class="td-badge">约4000元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>餐饮费用</strong></td>
+                        <td>
+                            7天三餐 + 小吃<br>
+                            <small style="color: var(--td-text-color-secondary);">人均150元/天 × 3人 × 7天</small>
+                        </td>
+                        <td><span class="td-badge">约3200元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>景点门票</strong></td>
+                        <td>
+                            雷峰塔、灵隐寺、西溪湿地、豫园、迪士尼、东方明珠<br>
+                            <small style="color: var(--td-text-color-secondary);">迪士尼占大头（719×3=2157元）</small>
+                        </td>
+                        <td><span class="td-badge">约3500元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>停车费</strong></td>
+                        <td>
+                            景区停车 + 酒店停车<br>
+                            <small style="color: var(--td-text-color-secondary);">约50元/天 × 7天</small>
+                        </td>
+                        <td><span class="td-badge">约350元</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>购物伴手礼</strong></td>
+                        <td>
+                            特产、纪念品<br>
+                            <small style="color: var(--td-text-color-secondary);">根据个人需求调整</small>
+                        </td>
+                        <td><span class="td-badge">约500-1000元</span></td>
+                    </tr>
+                    <tr style="background: var(--td-brand-color-light-9);">
+                        <td><strong>总计</strong></td>
+                        <td colspan="2">
+                            <div style="font-size: 18px; font-weight: 600; color: var(--td-brand-color);">
+                                约 <span style="font-size: 24px;">14,000 - 15,000元</span>
+                            </div>
+                            <div style="margin-top: 8px; font-size: 13px; color: var(--td-text-color-secondary);">
+                                （不含购物，实际费用根据住宿标准、餐饮选择有所浮动）
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 特别提醒 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-error-circle"></i>
+                <span class="td-card-title">特别提醒事项</span>
+            </div>
+            <div style="display: grid; gap: 16px;">
+                <div class="td-message td-message-error">
+                    <i class="t-icon t-icon-error-circle"></i>
+                    <div>
+                        <strong>春节人流极多</strong>：所有热门景点必须提前预约（提前3-7天），现场基本无法购票！<br>
+                        <small>建议下载：杭州西湖、上海豫园、上海迪士尼度假区、东方明珠 等官方APP</small>
+                    </div>
+                </div>
+                <div class="td-message td-message-warning">
+                    <i class="t-icon t-icon-error-circle"></i>
+                    <div>
+                        <strong>高速拥堵</strong>：春节期间高速免费但极易拥堵，建议：<br>
+                        • 避开上午9-11点、下午16-18点高峰<br>
+                        • 使用高德/百度地图实时路况<br>
+                        • 提前规划备用路线
+                    </div>
+                </div>
+                <div class="td-message td-message-info">
+                    <i class="t-icon t-icon-check-circle"></i>
+                    <div>
+                        <strong>江浙沪春节天气</strong>：2月下旬气温5-12℃，但湿冷体感温度低，务必带足保暖衣物（羽绒服、围巾、手套）
+                    </div>
+                </div>
+                <div class="td-message td-message-success">
+                    <i class="t-icon t-icon-check-circle"></i>
+                    <div>
+                        <strong>带娃出行必备</strong>：婴儿车、保温杯、常备药（感冒药、肠胃药、创可贴）、充电宝、零食、换洗衣物
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行程优化建议 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-lightbulb"></i>
+                <span class="td-card-title">行程优化建议</span>
+            </div>
+            <div style="line-height: 2;">
+                <p><strong>如果时间充裕</strong>：可在上海多停留1天，增加田子坊、新天地、武康路等小资文艺地标。</p>
+                <p><strong>如果想省钱</strong>：①迪士尼可改为上海科技馆+世纪公园（门票100元内）；②住宿选择如家/汉庭等经济型（200-300元/晚）；③餐饮选择本地快餐（人均50元）。</p>
+                <p><strong>如果体力有限</strong>：第7天可取消东方明珠，直接返程，或选择上午参观下午出发，中途住宿济南，第8天返回张家口。</p>
+                <p><strong>如果带老人</strong>：减少徒步强度，增加休息时间，迪士尼可改为豫园+田子坊+新天地等轻松行程。</p>
+            </div>
+        </div>
+
+        <!-- 应急联系方式 -->
+        <div class="td-card">
+            <div class="td-card-header">
+                <i class="t-icon t-icon-call"></i>
+                <span class="td-card-title">应急联系方式</span>
+            </div>
+            <table class="td-table">
+                <tbody>
+                    <tr>
+                        <td style="width: 30%;"><strong>杭州旅游咨询</strong></td>
+                        <td>0571-96123（24小时）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>上海旅游咨询</strong></td>
+                        <td>021-962020（24小时）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>高速救援</strong></td>
+                        <td>12122（全国高速公路报警救援）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>应急电话</strong></td>
+                        <td>110（报警）| 120（急救）| 122（交通事故）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>保险公司</strong></td>
+                        <td>请提前记录自己的车险理赔电话</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 底部信息 -->
+        <div class="footer-message">
+            <div style="font-size: 20px; margin-bottom: 12px;">
+                <i class="t-icon t-icon-heart"></i>
+                祝您一家春节旅途愉快！
+                <i class="t-icon t-icon-heart"></i>
+            </div>
+            <div style="font-size: 14px; opacity: 0.9;">
+                有任何问题随时沟通调整行程 | 旅途平安 | 龙年大吉
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let speechSynthesis = window.speechSynthesis;
+        let currentUtterance = null;
+        let isSpeaking = false;
+
+        function toggleHistorySection(sectionId) {
+            const content = document.getElementById(`history-content-${sectionId}`);
+            const icon = document.getElementById(`history-icon-${sectionId}`);
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+                stopSpeech();
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+            }
+        }
+
+        function speakHistoryText(sectionId) {
+            const content = document.getElementById(`history-content-${sectionId}`);
+            const button = document.getElementById(`tts-button-${sectionId}`);
+            const statusIndicator = document.getElementById(`tts-status-${sectionId}`);
+            
+            if (!speechSynthesis) {
+                alert('您的浏览器不支持语音播报功能');
+                return;
+            }
+
+            if (isSpeaking) {
+                if (speechSynthesis.paused) {
+                    speechSynthesis.resume();
+                    updateSpeechUI(sectionId, true, true);
+                } else {
+                    speechSynthesis.pause();
+                    updateSpeechUI(sectionId, true, false);
+                }
+                return;
+            }
+
+            // 获取文本内容
+            let text = content.innerText;
+            // 清理文本，移除多余的空格和换行
+            text = text.replace(/\s+/g, ' ').trim();
+            
+            if (text.length === 0) {
+                alert('没有可朗读的内容');
+                return;
+            }
+
+            // 停止之前的播放
+            stopSpeech();
+
+            // 优化文本预处理：保持自然的文本结构，避免过度处理
+            const sections = content.querySelectorAll('.history-section h3, .history-section p');
+            let processedText = '';
+            
+            sections.forEach((section, index) => {
+                const elementText = section.innerText.trim();
+                if (elementText) {
+                    if (section.tagName === 'H3') {
+                        // 标题：添加适当停顿
+                        processedText += elementText + '。 ';
+                    } else {
+                        // 段落：保持原有标点，只做必要的空格调整
+                        let paraText = elementText.replace(/\s+/g, ' ');
+                        processedText += paraText;
+                    }
+                }
+            });
+
+            // 创建语音合成实例
+            currentUtterance = new SpeechSynthesisUtterance(processedText);
+            currentUtterance.lang = 'zh-CN';
+            
+            // 优化语音参数，提高自然度
+            currentUtterance.rate = 0.9; // 适中语速，更自然
+            currentUtterance.pitch = 1.1; // 略高音调，更有活力
+            currentUtterance.volume = 1.0; // 正常音量，更清晰
+            
+            // 优化语音选择：优先使用系统默认语音，避免强制选择特定语音
+            // 简化语音选择逻辑，减少因语音不匹配导致的机械感
+            const voices = speechSynthesis.getVoices();
+            
+            // 只简单选择第一个中文语音，避免过度过滤导致选择不合适的语音
+            const chineseVoice = voices.find(voice => 
+                voice.lang === 'zh-CN' || voice.lang === 'zh'
+            );
+            
+            if (chineseVoice) {
+                currentUtterance.voice = chineseVoice;
+            }
+            // 不设置voice时，浏览器会使用默认语音，通常是最自然的选择
+            
+            // 事件监听优化
+            currentUtterance.onstart = function() {
+                isSpeaking = true;
+                updateSpeechUI(sectionId, true, true);
+            };
+            
+            currentUtterance.onend = function() {
+                isSpeaking = false;
+                updateSpeechUI(sectionId, false, false);
+            };
+            
+            currentUtterance.onerror = function(event) {
+                console.error('语音播报错误:', event);
+                isSpeaking = false;
+                updateSpeechUI(sectionId, false, false);
+                alert('语音播报发生错误，请稍后重试');
+            };
+            
+            currentUtterance.onpause = function() {
+                updateSpeechUI(sectionId, true, false);
+            };
+            
+            currentUtterance.onresume = function() {
+                updateSpeechUI(sectionId, true, true);
+            };
+            
+            // 开始播放
+            speechSynthesis.speak(currentUtterance);
+        }
+
+        function stopSpeech() {
+            if (speechSynthesis) {
+                speechSynthesis.cancel();
+            }
+            isSpeaking = false;
+            // 重置所有按钮状态
+            document.querySelectorAll('.t-button').forEach(btn => {
+                btn.classList.remove('t-button--disabled');
+                const buttonText = btn.querySelector('.t-button__text');
+                if (buttonText) {
+                    buttonText.textContent = '朗读';
+                }
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.className = 't-icon t-icon-play-circle';
+                }
+            });
+            document.querySelectorAll('.tts-status-indicator').forEach(indicator => {
+                indicator.classList.remove('visible', 'playing', 'paused');
+            });
+        }
+
+        function updateSpeechUI(sectionId, isPlaying, isPaused) {
+            const button = document.getElementById(`tts-button-${sectionId}`);
+            const statusIndicator = document.getElementById(`tts-status-${sectionId}`);
+            const buttonText = button.querySelector('.t-button__text');
+            const icon = button.querySelector('i');
+            
+            if (isPlaying) {
+                statusIndicator.classList.add('visible', 'playing');
+                statusIndicator.classList.remove('paused');
+                
+                if (isPaused) {
+                    if (buttonText) buttonText.textContent = '继续';
+                    if (icon) icon.className = 't-icon t-icon-play-circle';
+                    statusIndicator.textContent = '已暂停';
+                    statusIndicator.classList.add('paused');
+                } else {
+                    if (buttonText) buttonText.textContent = '暂停';
+                    if (icon) icon.className = 't-icon t-icon-pause-circle';
+                    statusIndicator.textContent = '播放中...';
+                    statusIndicator.classList.add('playing');
+                }
+            } else {
+                statusIndicator.classList.remove('visible', 'playing', 'paused');
+                if (buttonText) buttonText.textContent = '朗读';
+                if (icon) icon.className = 't-icon t-icon-play-circle';
+                statusIndicator.textContent = '';
+            }
+        }
+    </script>
+    
+    <!-- 快速导航条脚本 -->
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有日期项和Day区域
+            const dateItems = document.querySelectorAll('.date-item');
+            const daySections = {};
+            
+            // 初始化Day区域位置
+            for (let i = 1; i <= 7; i++) {
+                daySections[`day-${i}`] = document.getElementById(`day-${i}`);
+            }
+            
+            // 获取当前日期
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            
+            // 初始化当前日期高亮
+            dateItems.forEach(item => {
+                const dateStr = item.dataset.date;
+                if (dateStr === todayStr) {
+                    item.classList.add('today');
+                }
+            });
+            
+            // 日期点击事件
+            dateItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 移除所有选中状态
+                    dateItems.forEach(li => li.classList.remove('selected'));
+                    // 添加当前选中状态
+                    this.classList.add('selected');
+                    
+                    // 获取对应的Day ID
+                    const dayId = this.dataset.day;
+                    const targetSection = daySections[dayId];
+                    
+                    // 平滑滚动到目标区域（≤300ms响应）
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // 行程日历总览点击事件
+            const calendarItems = document.querySelectorAll('.calendar-clickable');
+            calendarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 获取对应的Day ID
+                    const dayId = this.dataset.day;
+                    const targetSection = daySections[dayId];
+                    
+                    // 同步更新左侧快速导航条的选中状态
+                    const correspondingDateItem = document.querySelector(`.date-item[data-day="${dayId}"]`);
+                    if (correspondingDateItem) {
+                        document.querySelectorAll('.date-item').forEach(li => li.classList.remove('selected'));
+                        correspondingDateItem.classList.add('selected');
+                    }
+                    
+                    // 平滑滚动到目标区域
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+
+    </script>
+</body>
+</html>
