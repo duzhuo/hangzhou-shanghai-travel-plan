@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海迪士尼乐园园区导览地图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .map-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .map-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #764ba2;
+        }
+        
+        .map-header p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .park-map {
+            width: 100%;
+            border: 3px solid #764ba2;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .map-container {
+                padding: 15px;
+            }
+            
+            .map-header h1 {
+                font-size: 22px;
+            }
+            
+            .legend {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <div class="map-header">
+            <h1>🏰 上海迪士尼乐园园区导览地图</h1>
+            <p>包含七大主题园区、主要设施、餐厅和洗手间位置</p>
+        </div>
+        
+        <div class="park-map">
+            <svg viewBox="0 0 1000 700" style="width: 100%; height: auto;">
+                <!-- 背景 -->
+                <rect width="1000" height="700" fill="#f5f5f5"/>
+                
+                <!-- 奇幻童话城堡 - 中心地标 -->
+                <rect x="420" y="280" width="160" height="140" fill="#ff6b6b" stroke="#333" stroke-width="3" rx="15"/>
+                <text x="500" y="355" font-size="20" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">🏰 城堡</text>
+                
+                <!-- 米奇大街 -->
+                <rect x="400" y="30" width="200" height="100" fill="#87ceeb" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="500" y="85" font-size="16" font-weight="600" fill="#333" text-anchor="middle">米奇大街</text>
+                <circle cx="420" cy="50" r="6" fill="#ff6b6b"/>
+                <text x="500" y="105" font-size="12" fill="#666" text-anchor="middle">🏪 入口</text>
+                
+                <!-- 奇想花园 -->
+                <rect x="280" y="180" width="180" height="140" fill="#ffeb3b" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="370" y="255" font-size="16" font-weight="600" fill="#333" text-anchor="middle">奇想花园</text>
+                <circle cx="300" cy="200" r="6" fill="#ffd93d"/>
+                <text x="370" y="275" font-size="12" fill="#666" text-anchor="middle">🌸 花园区</text>
+                
+                <!-- 探险岛 -->
+                <rect x="30" y="200" width="220" height="180" fill="#6bcf7f" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="140" y="295" font-size="16" font-weight="600" fill="#333" text-anchor="middle">探险岛</text>
+                <circle cx="60" cy="230" r="6" fill="#00bcd4"/>
+                <text x="140" y="315" font-size="12" fill="#666" text-anchor="middle">🌿 热门项目</text>
+                
+                <!-- 宝藏湾 -->
+                <rect x="620" y="50" width="200" height="180" fill="#a855f7" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="720" y="145" font-size="16" font-weight="600" fill="#333" text-anchor="middle">宝藏湾</text>
+                <circle cx="650" cy="80" r="6" fill="#ff69b4"/>
+                <text x="720" y="165" font-size="12" fill="#666" text-anchor="middle">🏴 海盗主题</text>
+                
+                <!-- 明日世界 -->
+                <rect x="280" y="450" width="200" height="150" fill="#00bcd4" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="380" y="530" font-size="16" font-weight="600" fill="#333" text-anchor="middle">明日世界</text>
+                <circle cx="310" cy="480" r="6" fill="#ff6b6b"/>
+                <text x="380" y="550" font-size="12" fill="#666" text-anchor="middle">🚀 科技主题</text>
+                
+                <!-- 梦幻世界 -->
+                <rect x="560" y="420" width="200" height="160" fill="#ff69b4" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="660" y="505" font-size="16" font-weight="600" fill="#333" text-anchor="middle">梦幻世界</text>
+                <circle cx="590" cy="450" r="6" fill="#a855f7"/>
+                <text x="660" y="525" font-size="12" fill="#666" text-anchor="middle">✨ 梦幻项目</text>
+                
+                <!-- 玩具总动员 -->
+                <rect x="130" y="480" width="140" height="140" fill="#ffd93d" stroke="#333" stroke-width="2" rx="10"/>
+                <text x="200" y="555" font-size="16" font-weight="600" fill="#333" text-anchor="middle">玩具总动员</text>
+                <circle cx="160" cy="510" r="6" fill="#6bcf7f"/>
+                <text x="200" y="575" font-size="12" fill="#666" text-anchor="middle">🧸 玩具主题</text>
+                
+                <!-- 迪士尼小镇 - 入口处 -->
+                <rect x="380" y="0" width="240" height="30" fill="#764ba2" stroke="#333" stroke-width="2" rx="8"/>
+                <text x="500" y="22" font-size="14" font-weight="600" fill="white" text-anchor="middle">迪士尼小镇 🛍️</text>
+                
+                <!-- 建议游览路线箭头 -->
+                <path d="M 480 55 Q 380 120 370 190 T 140 290 Q 120 400 380 540 T 480 600 Q 550 650 660 570" 
+                      fill="none" stroke="#764ba2" stroke-width="5" stroke-dasharray="15,8" opacity="0.7"/>
+                <polygon points="660,560 675,575 650,580" fill="#764ba2"/>
+                
+                <!-- 餐厅图标 -->
+                <text x="470" y="70" font-size="18">🍴</text>
+                <text x="350" y="210" font-size="18">🍴</text>
+                <text x="110" y="230" font-size="18">🍴</text>
+                <text x="650" y="90" font-size="18">🍴</text>
+                <text x="310" y="490" font-size="18">🍴</text>
+                <text x="590" y="460" font-size="18">🍴</text>
+                <text x="170" y="500" font-size="18">🍴</text>
+                
+                <!-- 洗手间图标 -->
+                <text x="510" y="110" font-size="14" fill="#666">🚻</text>
+                <text x="390" y="250" font-size="14" fill="#666">🚻</text>
+                <text x="160" y="270" font-size="14" fill="#666">🚻</text>
+                <text x="700" y="150" font-size="14" fill="#666">🚻</text>
+                <text x="340" y="520" font-size="14" fill="#666">🚻</text>
+                <text x="620" y="490" font-size="14" fill="#666">🚻</text>
+                <text x="200" y="520" font-size="14" fill="#666">🚻</text>
+                
+                <!-- 说明文字 -->
+                <text x="50" y="680" font-size="12" fill="#666">💡 建议:开园后按箭头方向游览</text>
+                <text x="400" y="680" font-size="12" fill="#666">🎯 城堡:中心地标,烟花秀最佳观赏点</text>
+                <text x="750" y="680" font-size="12" fill="#666">🛍️ 小镇:餐饮购物集中区</text>
+            </svg>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #87ceeb;"></div>
+                <span>米奇大街</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffeb3b;"></div>
+                <span>奇想花园</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #6bcf7f;"></div>
+                <span>探险岛</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #a855f7;"></div>
+                <span>宝藏湾</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00bcd4;"></div>
+                <span>明日世界</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff69b4;"></div>
+                <span>梦幻世界</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffd93d;"></div>
+                <span>玩具总动员</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
